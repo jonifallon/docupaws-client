@@ -13,30 +13,21 @@ Docu-Paws is a single-page application that allows users to add and track pet he
 -   Deployed Front End Client:
 -   Heroku Site:  FILL THIS IN
 
-
-
-
 ## ERD
 
-Link to ERD: http://imgur.com/XXXXXXX
-
-
+Link to ERD: http://imgur.com/a/xAnQs
 
 ## API
 
-I used Express/Mongo to create the backend.  I needed two resources in addition to users:
+I used Rails to create the backend.  I added a Pets resource and may add an additional
+resource of meds (stretch goal):
 
 - pets
-- prescriptions
+- meds (prescriptions)
 
 ## Screenshot
 
-Screenshot of the app:
-
-
-
-
-
+Screenshot of the app:  http://imgur.com/a/Xlc6C
 
 ## Client
 
@@ -54,42 +45,20 @@ As a user, I want to be able to:
 
 ## Wireframes
 
-Link to Wireframe: http://imgur.com/a/XXXX
-ADD THIS
+Link to Wireframe:
+http://imgur.com/a/wNcjX
+http://imgur.com/a/6mOHg
 
 ### Challenges
+
 -   Completing the project within the given timeframe.
 
 ## Approach
+
 I chose this as my capstone because, within the past month, both of my pets at home have been in the emergency room and vets office for urgent health issues.  Because I wasn't at home, I didn't have information about their prescription meds, last shot dates, etc.  It would have been much easier to have their medical info available by using a site/app like this!
 
 I decided that I would create two resource tables in addition to user, one for the pet and one for the pet's prescription meds.
 
-I felt like Express/Mongo would be a good choice for a back end, and I wanted more experience using that framework.  Taking into consideration the timeframe in which we have to develop the app, I chose the browser template rather than using a front end framework.
-
-## Dependencies
-
-Install with `npm install`.
-
--   [Webpack](https://webpack.github.io)
--   [Bootstrap](http://getbootstrap.com)
--   [Handlebars.js](http://handlebarsjs.com)
-
-At the beginning of each cohort, update the versions in
-[`package.json`](package.json) by replace all versions with a glob (`*`) and
-running `npm update --save && npm update --save-dev`. You may wish to test these
-changes by deleting the `node_modules` directory and running `npm install`.
-Fix any conflicts.
-
-To deploy the SPA, run `grunt deploy`.
-
-## Installation
-
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Move into the new project and `git init`.
-1.  Install dependencies with `npm install`.
 
 ## [License](LICENSE)
 

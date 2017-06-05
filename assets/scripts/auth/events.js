@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
+const preLoadHide = require('../pre-load-hide')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -41,7 +42,8 @@ const onChangePassword = function (event) {
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
   .catch(ui.changePasswordFailure)
-  // $('#change-password')[0].reset()
+  $('#changepassword-form')[0].reset()
+  $('#changepw-error').hide()
 }
 
 const onMyIndex = function () {
@@ -119,6 +121,13 @@ const hideSigninShowSignup = function () {
   $('#signin-error').hide()
 }
 
+const closeModal = function () {
+  preLoadHide.preLoad()
+  $('#changepassword-form').trigger('reset')
+  $('#signup-form').trigger('reset')
+  $('#signin-form').trigger('reset')
+}
+
 const addHandlers = () => {
   $('#signup-form').on('submit', onSignUp)
   $('#signin-form').on('submit', onSignIn)
@@ -131,6 +140,9 @@ const addHandlers = () => {
   $('#update-pet').on('submit', onUpdatePet)
   $('#create-pet').on('submit', createpet)
   $('#signupWithinSigninModal-button').on('click', hideSigninShowSignup)
+  $('#signup-close').on('click', closeModal)
+  $('#signin-close').on('click', closeModal)
+  $('#changepassword-close').on('click', closeModal)
 }
 
 module.exports = {

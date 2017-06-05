@@ -13,6 +13,10 @@ require('./example')
 const authEvents = require('./auth/events.js')
 
 // On document ready
+const preLoadHide = require('./pre-load-hide')
+
+preLoadHide.preLoad()
+
 $(() => {
   authEvents.addHandlers()
 })

@@ -88,6 +88,7 @@ const signUpSuccess = (data) => {
   $('.signup-menu-item').hide()
   $('.signin-menu-item').show()
   $('#signin-modal').modal('show')
+  $('#signup-error').hide()
 }
 
 const signUpFailure = (error) => {
@@ -105,6 +106,7 @@ const signInSuccess = (data) => {
   $('.signout-menu-item').show()
   $('.viewAddPetButtons').show()
   $('#signin-modal').modal('hide')
+  $('#signin-error').hide()
   hideItems()
   api.myIndex()
   .then(onMyIndexSuccess)
@@ -112,6 +114,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (error) => {
+  $('#signin-error').show()
   hideItems()
   console.error('signin failure ran.  error is:', error)
 }
@@ -133,12 +136,18 @@ const signOutFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
+  console.log('inside changepassword success ui password successfully changed')
   hideItems()
-  // console.log('password successfully changed')
+  $('#changepassword-modal').modal('hide')
+  $('#changepw-error').hide()
+  api.myIndex()
+  .then(onMyIndexSuccess)
+  .catch(onMyIndexFailure)
 }
 
 const changePasswordFailure = (error) => {
-  hideItems()
+  console.error('change password failed and the error is ', error)
+  $('#changepw-error').show()
   console.error(error)
 }
 

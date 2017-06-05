@@ -1,5 +1,5 @@
 
-<h1 id="pets_list">Just My Pets</h1>
+<h1 id="pets_list">My Pets</h1>
 <br><br><br>
 
 {{#if pets}}
@@ -8,14 +8,14 @@
    <tr class="item">
      <td valign="top" class="textContent">
        <!-- <img src=""{{img}}" width="50" height="75" class="itemImage"" /> -->
-       <h4 class="itemName">{{this.product}}</h4>
-       <span class="contentSecondary"><b>Description:</b> {{this.description}}</span><br />
-       <span class="contentSecondary"><b>Notes:</b> {{this.notes}}</span><br />
-       <span class="contentSecondary"><data-id="{{this.id}}">Pet ID: {{this.id}}</span><br />
+       <h4 class="itemName">&#128062;  {{this.name}}</h4>
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Shot History:</b> {{this.shots}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Notes:</b> {{this.notes}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<data-id="{{this.id}}">Pet ID: {{this.id}}</span><br />
        <div>
          <br>
-         <p><button class="btn btn-warning delete_myPet" name="button" data-id="{{this.id}}">Delete</button>
-         <button class="btn btn-success update-myPet" name="button" data-id="{{this.id}}">Update</button></p>
+         <p>&nbsp; &nbsp; &nbsp; &nbsp;<button class="btn btn-warning delete_myPet" name="button" data-id="{{this.id}}">Delete</button>
+         &nbsp; &nbsp;<button class="btn btn-success update-myPet" name="button" data-id="{{this.id}}">Update</button></p>
       </div>
     </td>
     <br>
@@ -24,5 +24,5 @@
 
     {{/each}}
     {{else}}
-    <div><h3>You have no pets to display at this time.  You may create an pet by selecting the <b>Add a New Pet</b> button.</h3></div>
+    <div><h3>You have no pets to display at this time.  You may create an pet by selecting the <b>Add A Pet</b> button.</h3></div>
     {{/if}}

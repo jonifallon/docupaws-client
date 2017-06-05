@@ -9,8 +9,8 @@
         <td valign="top" class="textContent">
             <!-- <img src=""{{img}}" width="50" height="75" class="itemImage"" /> -->
             <i class="fa fa-paw"></i>
-            <h4 class="itemName">{{pet.product}}</h4>
-            <span class="contentSecondary"><b>Description:</b> {{pet.description}}</span><br />
+            <h4 class="itemName">{{pet.name}}</h4>
+            <span class="contentSecondary"><b>Shot History:</b> {{pet.shots}}</span><br />
             <span class="contentSecondary"><b>Notes:</b> {{pet.notes}}</span><br />
             <span class="contentSecondary"><data-id="{{pet.id}}">ID: {{pet.id}}</span><br />
         </td>
@@ -20,5 +20,5 @@
     <tr><td> </td></tr>
     {{/each}}
     {{else}}
-    <div><h3>There are no pets or outages to display at this time.  If you need to report an pet, please contact the Help Desk.</h3></div>
+    <div><h3>Please add a pet.</h3></div>
     {{/if}}

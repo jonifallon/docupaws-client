@@ -224,18 +224,18 @@
 
                     <form id="create-pet">
                       <h3>Add a New Pet</h3>
-                      <div class="productfield">
-                        <label>Application or Service</label>
-                        <input type="text" required="true" placeholder="Insert product name" class="form-control" name="pet[product]" id="text-product" aria-required="false">
+                      <div class="namefield">
+                        <label>Pet Name</label>
+                        <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name" aria-required="false">
                       </div>
-                      <div class="descriptionfield">
-                        <label>Description</label>
-                        <textarea type="textarea" required="true" placeholder="Describe symptoms and/or error messages a user might encounter." class="form-control" name="pet[description]" id="textarea-description" aria-required="true"></textarea>
+                      <div class="shotsfield">
+                        <label>Shot History</label>
+                        <textarea type="textarea" required="true" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" aria-required="true"></textarea>
                       </div>
 
                       <div class="notesfield">
                        <label>Notes</label>
-                       <textarea type="textarea" required="false" placeholder="Provide any known workarounds, restoration ETA, etc." class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
+                       <textarea type="textarea" required="false" placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
                       </div>
                       <div><button type="submit" style="success" id="newpet">Submit</button>
                       </div>
@@ -243,22 +243,23 @@
 
                     <form id="update-pet">
                         <h3>Update a Pet</h3>
-                      <div class="productfield">
-                        <label>Application or Service</label>
-                        <input type="text" required="true" placeholder="Insert product name" class="form-control" name="pet[product]" id="text-product2">
+                      <div class="namefield">
+                        <label>Pet Name</label>
+                        <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name2">
                       </div>
 
-                      <div class="descriptionfield">
+                      <div class="shotsfield">
                         <label>Description</label>
-                      <textarea type="textarea" required="true" placeholder="Describe symptoms and/or error messages a user might encounter." class="form-control" name="pet[description]" id="textarea-description2"></textarea>
+                      <textarea type="textarea" required="true" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
                      </div>
 
                      <div class="notesfield">
                        <label>Notes</label>
-                       <textarea type="textarea" required="false" placeholder="Provide any known workarounds, restoration ETA, etc." class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
+                       <textarea type="textarea" required="false" placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
                      </div><br>
                      <div><button type="submit" style="success" id="updatedpetsubmit">Submit</button></div>
                     </form>
+
 
                     <div class="viewAllPets"></div>
 

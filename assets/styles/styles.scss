@@ -14,11 +14,11 @@ body {
 
 h1 {
   font-size: 40px;
-  color: pink;
+  color: #000;
 }
 
 h3 {
-  color: pink;
+  color: #000;
 }
 
 #welcome {
@@ -129,11 +129,12 @@ h3 {
 }
 
 .contentSecondary {
-  font-size: 16px;
+  font-size: 20px;
+  color: #001d61;
 }
 
 .itemName {
-  font-size: 20px;
+  font-size: 30px;
   color: #001d61;
 }
 
@@ -182,6 +183,10 @@ h3 {
   margin-top: 25px;
   min-height: 800px;
 }
+
+// .form-control {
+//   position: absolute;
+// }
 
 .col-md-12 {
   // background-image: url('../images/catdog.jpg');

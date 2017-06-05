@@ -64,10 +64,10 @@ const onGetPetForUpdateSuccess = function (data) {
   // $(event.target).data('id')
   $('#update-pet').attr('data-id', data.pet.id)
   // console.log('data-id', data.pet.id)
-  $('#text-product2').val(data.pet.product)
-  // console.log('product ', data.pet.product)
-  $('#textarea-description2').val(data.pet.description)
-  // console.log('description ', data.pet.description)
+  $('#text-name2').val(data.pet.name)
+  // console.log('name ', data.pet.name)
+  $('#textarea-shots2').val(data.pet.shots)
+  // console.log('shots ', data.pet.shots)
   $('#textarea-notes2').val(data.pet.notes)
   // console.log('notes ', data.pet.notes)
   store.data = data
@@ -147,8 +147,11 @@ const changePasswordSuccess = (data) => {
 
 const changePasswordFailure = (error) => {
   console.error('change password failed and the error is ', error)
-  $('#changepw-error').show()
   console.error(error)
+  api.myIndex()
+  .then(onMyIndexSuccess)
+  .catch(onMyIndexFailure)
+  $('#changepw-error').show()
 }
 
 const deletePetSuccess = (data) => {

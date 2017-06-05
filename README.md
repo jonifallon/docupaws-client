@@ -8,10 +8,13 @@ Docu-Paws is a single-page application that allows users to add and track pet he
 
 ## Application Links
 
--   Front End Repo: https://github.com/JONIFALON....
--   Back End Repo: https://github.com/JONIFALLON...
--   Deployed Front End Client: https://JONIFALLON.github.io/pawsibleconnection-client/
+-   Front End Repo: https://github.com/jonifallon/docupaws-client
+-   Back End Repo: https://github.com/jonifallon/docupaws-api
+-   Deployed Front End Client:
 -   Heroku Site:  FILL THIS IN
+
+
+
 
 ## ERD
 
@@ -31,10 +34,9 @@ I used Express/Mongo to create the backend.  I needed two resources in addition 
 Screenshot of the app:
 
 
-DELETE THIS
-After determining the types of attributes that would be needed for each resource, we started by creating a controller and filled it with actions associated with the appropriate CRUD actions. Using the attributes, we also created the schema from within each of our resource models and updated the routes file to reflect the new resources. Express/Mongo allowed us the flexibility to add in attributes as we saw fit, which was valuable when we created an additional Template which required more fields.
 
-I developed and tested all CRUD actions with cURL scripts.
+
+
 
 ## Client
 

@@ -11,7 +11,7 @@ Docu-Paws is a single-page application that allows users to add and track pet he
 -   Front End Repo: https://github.com/jonifallon/docupaws-client
 -   Back End Repo: https://github.com/jonifallon/docupaws-api
 -   Deployed Front End Client:
--   Heroku Site:  FILL THIS IN
+-   Heroku Site:  
 
 ## ERD
 
@@ -29,11 +29,9 @@ resource of meds (stretch goal):
 
 Screenshot of the app:  http://imgur.com/a/Xlc6C
 
-## Client
+## Technologies Used
 
-I used bootstrap as a tool for creating a clean, user-friendly interface with the browser template.  Modals are used for all authentication.  The interface is responsive and can be used on mobile devices.  VERIFY THIS
-
-Pet forms are CREATED WITH (EXPLAIN)
+I used bootstrap as a tool for creating a clean, user-friendly interface with the browser template.  Modals are used for all authentication.  The interface is responsive and can be used on mobile devices.
 
 ## User Stories
 
@@ -49,9 +47,9 @@ Link to Wireframe:
 http://imgur.com/a/wNcjX
 http://imgur.com/a/6mOHg
 
-### Challenges
+## Challenges
 
--   Completing the project within the given timeframe.
+-   Finding a way to force carraige returns in a textarea field on a form so it renders properly in the browser.
 
 ## Approach
 
@@ -59,6 +57,27 @@ I chose this as my capstone because, within the past month, both of my pets at h
 
 I decided that I would create two resource tables in addition to user, one for the pet and one for the pet's prescription meds.
 
+## Dependencies
+
+Install with `npm install`.
+
+-   [Webpack](https://webpack.github.io)
+-   [Bootstrap](http://getbootstrap.com)
+-   [Handlebars.js](http://handlebarsjs.com)
+
+At the beginning of each cohort, update the versions in
+[`package.json`](package.json) by replace all versions with a glob (`*`) and
+running `npm update --save && npm update --save-dev`. You may wish to test these
+changes by deleting the `node_modules` directory and running `npm install`.
+Fix any conflicts.
+
+## Installation
+
+1.  [Download](../../archive/master.zip) this template.
+2.  Unzip and rename the template directory.
+3.  Empty [`README.md`](README.md) and fill with your own content.
+4.  Move into the new project and `git init`.
+5.  Install dependencies with `npm install`.
 
 ## [License](LICENSE)
 

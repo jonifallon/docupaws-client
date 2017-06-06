@@ -56,7 +56,48 @@ const onMyIndex = function () {
   .catch(ui.onMyIndexFailure)
 }
 
+// adding pets
 
+const populateAddPetForm = function (event) {
+  console.log('inside populateAddPetForm event')
+  event.preventDefault()
+  $('.viewAllPets').hide()
+  $('#create-pet').show()
+  $('.viewAddPetButtons').hide()
+  // now go to a form that determines which button was submitted.  if submit, createpet.
+  // if cancel, cancelNew
+}
+
+const createpet = function (event) {
+  console.log('inside the createpet function on events.js', event)
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.createpet(data)
+  .then(ui.createpetSuccess)
+  .catch(ui.createpetFailure)
+  $('#create-pet')[0].reset()
+}
+
+const cancelNew = function () {
+  console.log('inside cancelNew event')
+  event.preventDefault()
+  hideNewPet() // what is this
+  $('#create-pet')[0].reset()
+  $('.viewAddPetButtons').show()
+  api.myIndex()
+  .then(ui.onMyIndexSuccess)
+  .catch(ui.onMyIndexFailure)
+}
+
+const hideNewPet = function (event) {
+  console.log('inside hideNewPet function')
+  $('#create-pet').hide()
+  $('#newpet').off()
+  $('#newpet').prop('disabled', true)
+  // $('#add-pet-button').show()
+}
+
+// update pet
 
 const populateUpdatePetForm = function (event) {
   console.log('inside populateUpdatePetForm event')
@@ -71,6 +112,46 @@ const populateUpdatePetForm = function (event) {
   $('#update-pet').show()
   // console.log('inside populateUpdatePetForm', pet)
 }
+
+const onUpdatePet = function (event) {
+  console.log('inside onUpdatePet function')
+  event.preventDefault()
+  console.log('inside the updatePet function in events, and events is', event)
+  // const id = $(event.target).data('id')
+  const id = store.data.pet.id
+  console.log('id from the store is ', id)
+  const data = getFormFields(this)
+  // if ($('#cancelupdatepet').on('submit', cancelNew)) {
+  //   cancelUpdate()
+  //   return
+  // }
+  api.updatePet(id, data)
+  .then(ui.updatepetSuccess)
+  .catch(ui.updatepetFailure)
+}
+
+const cancelUpdate = function () {
+  console.log('inside cancelUpdate function')
+  event.preventDefault()
+  // $('#update-pet').show()
+  $('#update-pet')[0].reset()
+  hideUpdatePet()
+  $('.viewAddPetButtons').show()
+  api.myIndex()
+  .then(ui.onMyIndexSuccess)
+  .catch(ui.onMyIndexFailure)
+}
+
+const hideUpdatePet = function (event) {
+  console.log('inside hideUpdatePet function')
+  // event.preventDefault()
+  // resetTemplate1Fields()
+  $('#update-pet').hide()
+  $('#updatedpetsubmit').off()
+  $('#updatedpetsubmit').prop('disabled', true)
+}
+
+// delete pet
 
 const deletePet = function (event) {
   console.log('inside deletePet event')
@@ -92,49 +173,7 @@ const deletePet = function (event) {
     .catch(ui.deletePetFailure)
 }
 
-const createpet = function (event) {
-  console.log('inside the createpet function on events.js', event)
-  event.preventDefault()
-  // if user hits the submit button, do api.createpet
-  // if user hits the cancel button, go to cancelNew
-  if ($('#cancelnewpet').on('submit', cancelNew)) {
-    cancelNew()
-    return
-  }
-  const data = getFormFields(this)
-  api.createpet(data)
-  .then(ui.createpetSuccess)
-  .catch(ui.createpetFailure)
-  $('#create-pet')[0].reset()
-}
-
-const populateAddPetForm = function (event) {
-  console.log('inside populateAddPetForm event')
-  event.preventDefault()
-  $('.viewAllPets').hide()
-  $('#create-pet').show()
-  $('.viewAddPetButtons').hide()
-  // now go to a form that determines which button was submitted.  if submit, createpet.
-  // if cancel, cancelNew
-}
-
-const onUpdatePet = function (event) {
-  console.log('inside onUpdatePet function')
-  event.preventDefault()
-  console.log('inside the updatePet function in events, and events is', event)
-  // const id = $(event.target).data('id')
-  const id = store.data.pet.id
-  console.log('id from the store is ', id)
-  const data = getFormFields(this)
-  if ($('#cancelupdatepet').on('submit', cancelNew)) {
-    cancelUpdate()
-    return
-  }
-  api.updatePet(id, data)
-  .then(ui.updatepetSuccess)
-  .catch(ui.updatepetFailure)
-}
-
+// other stuff
 const hideSigninShowSignup = function () {
   console.log('inside hideSigninShowSignup event')
   $('#signin-modal').modal('hide')
@@ -150,56 +189,16 @@ const closeModal = function () {
   $('#signin-form').trigger('reset')
 }
 
-const cancelUpdate = function () {
-  console.log('inside cancelUpdate function')
-  event.preventDefault()
-  // $('#update-pet').show()
-  $('#update-pet')[0].reset()
-  hideUpdatePet()
-  $('.viewAddPetButtons').show()
-  api.myIndex()
-  .then(ui.onMyIndexSuccess)
-  .catch(ui.onMyIndexFailure)
-}
-
-const cancelNew = function () {
-  console.log('inside cancelNew event')
-  event.preventDefault()
-  $('#create-pet')[0].reset()
-  hideNewPet()
-  $('.viewAddPetButtons').show()
-  api.myIndex()
-  .then(ui.onMyIndexSuccess)
-  .catch(ui.onMyIndexFailure)
-}
-
-const hideNewPet = function (event) {
-  console.log('inside hideNewPet function')
-  $('#create-pet').hide()
-  $('#newpetsubmit').off()
-  $('#newpetsubmit').prop('disabled', true)
-  // $('#add-pet-button').show()
-}
-
-const hideUpdatePet = function (event) {
-  console.log('inside hideUpdatePet function')
-  // event.preventDefault()
-  // resetTemplate1Fields()
-  $('#update-pet').hide()
-  $('#updatedpetsubmit').off()
-  $('#updatedpetsubmit').prop('disabled', true)
-}
-
 const addHandlers = () => {
   // add pet handlers
   $('#add-pet-button').on('submit', populateAddPetForm)
   $('#create-pet').on('submit', createpet)
-  $('#cancelnewpet').on('submit', cancelNew)
+  $('#cancelnewpet').on('click', cancelNew)
   // delete pet handlers
   $('#delete-pet').on('submit', deletePet)
   // update pet handlers
   $('#update-pet').on('submit', onUpdatePet)
-  $('#cancelupdatepet').on('submit', cancelUpdate)
+  $('#cancelupdatepet').on('click', cancelUpdate)
   // auth handlers
   $('#changepassword-form').on('submit', onChangePassword)
   $('#signup-form').on('submit', onSignUp)

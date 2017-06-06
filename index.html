@@ -38,10 +38,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal"><span class="glyphicon glyphicon-pencil"></span> Sign Up</a></li>
-            <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
-            <li class="change-password-menu-item"><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal"><span class="glyphicon glyphicon-edit"></span> Change Password</a></li>
-            <li class="signout-menu-item"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal"> Sign Up</a></li>
+            <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"> Sign In</a></li>
+            <li class="change-password-menu-item"><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
+            <li class="signout-menu-item"><a href="#">Sign Out</a></li>
           </ul>
         </li>
       </ul>
@@ -90,7 +90,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title-signup">Sign Up</h4>
+          <h4 class="modal-title-signup"><span class="glyphicon glyphicon-pencil"></span> &#xa0; Sign Up</h4>
         </div>
         <div class="modal-body">
           <!--  Start of auth error handling-->
@@ -104,7 +104,10 @@
               <input type="text" name="credentials[email]" id="signup-email" placeholder="Enter Email">
               <input type="password" name="credentials[password]" id="signup-password" placeholder="Enter Password">
               <input type="password" name="credentials[password_confirmation]" id="signup-passwordconfirm" placeholder="Confirm password">
-              <input type="submit" name="submit" value="Sign up!">
+              <!-- <input type="submit" name="submit" value="Sign up!"> -->
+              <!-- <button type="button" class="btn btn-default" name="submit">Sign Up!</button> -->
+              <br><br>
+              <button type="submit" class="btn btn-primary" style="primary">Sign Up!</button>
             </fieldset>
           </form>
           <!--end signup form-->
@@ -128,7 +131,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title-signin">Sign In</h4>
+          <h4 class="modal-title-signin"><span class="glyphicon glyphicon-log-in"></span> &#xa0; Sign In</h4>
         </div>
         <div class="modal-body">
           <div class="alert alert-danger" id='signin-error' role="alert">
@@ -141,9 +144,11 @@
 
               <input type="text" name="credentials[email]" id="sign-in email" placeholder="Enter Email">
               <input type="password" name="credentials[password]" id="sign-in password" placeholder="Enter Password">
-              <input type="submit" name="submit" value="Sign in!">
+              <br>
+              <br>
+              <button type="submit" class="btn btn-primary" style="primary">Sign In</button>
               <br><br><br>
-              <p>Don't yet have an account? Please <button id="signupWithinSigninModal-button" type="button" class="btn btn-default" data-dismiss="modal">Sign Up</button></p>
+              <p><span class="glyphicon glyphicon-pencil"></span> &#xa0;Don't yet have an account? Please <button id="signupWithinSigninModal-button" type="button" class="btn btn-default" data-dismiss="modal">Sign Up</button></p>
             </fieldset>
           </form>
           <!--end signin form-->
@@ -167,7 +172,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Change Password</h4>
+          <h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span>&#xa0; Change Password</h4>
         </div>
         <div class="modal-body">
           <div class="alert alert-danger" id='changepw-error' role="alert">
@@ -179,7 +184,8 @@
               <legend></legend>
               <input type="password" name="passwords[old]" id="old password" placeholder="old password">
               <input type="password" name="passwords[new]" id="new password" placeholder="new password">
-              <input type="submit" name="submit" value="Change password!">
+              <br><br>
+              <button type="submit" class="btn btn-primary" style="primary">Change Password</button>
             </fieldset>
           </form>
           <!--end changepassword form-->
@@ -200,11 +206,11 @@
       <div class="col-md-12" >
           <div class="row">
             <div id="greeting">
-              <div id="docupaws">  Docu-Paws</div>
+              <div id="docupaws">Docu-Paws</div>
               <div id="welcome">The convenient way to track your pet's medical information!</div>
               <!--use &#128062; if font-awesome isn't ok-->
 
-              <div id="getstartedbutton"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-hand-up"></span>   Get Started</button></a></div>
+              <div id="getstartedbutton"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-default btn-lg">&#128062; &#xa0;  Get Started</button></a></div>
             </div>
 
                   <div class="well well-lg">
@@ -229,75 +235,77 @@
 
                       <h3>Add a New Pet</h3>
 
+                      <h4>All fields are required</h4>
+
                       <div class="namefield">
-                        <label>Pet Name</label>
+                        <label>Pet Name *</label>
                         <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name" aria-required="false">
                       </div>
 
                       <div class="shotsfield">
-                        <label>Shot History</label>
-                        <textarea type="textarea" required="true" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" aria-required="true"></textarea>
+                        <label>Shot History *</label>
+                        <textarea type="textarea" required="false" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" aria-required="true"></textarea>
                       </div>
 
                       <div class="dobfield">
-                        <label>DOB</label>
-                        <input type="text" required="false" placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob" aria-required="false">
+                        <label>DOB *</label>
+                        <input  type="text" required="false" placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob" aria-required="false">
                       </div>
 
                       <div class="speciesfield">
-                        <label>Species</label>
-                        <input type="text" required="false" placeholder="Cat or Dog?" class="form-control" name="pet[species]" id="text-species" aria-required="false">
+                        <label>Species *</label>
+                        <input  type="text" required="false" placeholder="Cat or Dog?" class="form-control" name="pet[species]" id="text-species" aria-required="false">
                       </div>
 
                       <div class="spayedfield">
-                        <label>Spayed or Neutered</label>
-                        <input type="text" required="false" placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed" aria-required="false">
+                        <label>Spayed or Neutered *</label>
+                        <input  type="text" required="false" placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed" aria-required="false">
                       </div>
 
                       <div class="genderfield">
-                        <label>Gender</label>
-                        <input type="text" required="false" placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender" aria-required="false">
+                        <label>Gender *</label>
+                        <input  type="text" required="false" placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender" aria-required="false">
                       </div>
 
                       <div class="breedfield">
-                        <label>Breed</label>
-                        <input type="text" required="false" placeholder="Breed (if known)" class="form-control" name="pet[breed]" id="text-breed" aria-required="false">
+                        <label>Breed *</label>
+                        <input  type="text" required="false" placeholder="Breed" class="form-control" name="pet[breed]" id="text-breed" aria-required="false">
                       </div>
 
                       <div class="colorfield">
-                        <label>Color</label>
-                        <input type="text" required="false" placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color" aria-required="false">
+                        <label>Color *</label>
+                        <input  type="text" required="false" placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color" aria-required="false">
                       </div>
 
                       <div class="purchasedfield">
-                        <label>Purchased Date</label>
-                        <input type="text" required="false" placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased" aria-required="false">
+                        <label>Purchased Date *</label>
+                        <input  type="text" required="false" placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased" aria-required="false">
                       </div>
 
                       <div class="microchipfield">
-                        <label>Microchip #</label>
-                        <input type="text" required="false" placeholder="Microchip # (if applicable)" class="form-control" name="pet[microchip]" id="text-microchip" aria-required="false">
+                        <label>Microchip # *</label>
+                        <input  type="text" required="false" placeholder="Microchip #" class="form-control" name="pet[microchip]" id="text-microchip" aria-required="false">
                       </div>
 
                       <div class="weightfield">
-                        <label>Weight</label>
-                        <input type="text" required="false" placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight" aria-required="false">
+                        <label>Weight *</label>
+                        <input  type="text" required="false" placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight" aria-required="false">
                       </div>
 
                       <div class="vetfield">
-                        <label>Veterinarian</label>
-                        <input type="text" required="false" placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet" aria-required="false">
+                        <label>Veterinarian *</label>
+                        <input  type="text" required="false" placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet" aria-required="false">
                       </div>
 
                       <div class="vetphonefield">
-                        <label>Veterinarian Phone</label>
-                        <input type="text" required="false" placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone" aria-required="false">
+                        <label>Veterinarian Phone *</label>
+                        <input  type="text" required="false" placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone" aria-required="false">
                       </div>
 
 
 
                       <div class="notesfield">
-                       <label>Notes</label>
+                       <label>Notes *</label>
                        <textarea type="textarea" required="false" placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
                       </div>
 
@@ -316,7 +324,7 @@
 
                       <div class="shotsfield">
                         <label>Shot History</label>
-                      <textarea type="textarea" required="true" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
+                      <textarea type="textarea" required="false" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
                      </div>
 
                      <div class="dobfield">
@@ -381,7 +389,7 @@
                      </div>
 
                      <br>
-                     <div><button type="submit" style="success" id="updatedpetsubmit">Submit</button> <button type="submit" class="btn btn-default" formnovalidate id="cancelupdatepet">Cancel</button></div>
+                     <div><button type="submit" required="false" style="success" id="updatedpetsubmit">Submit</button> <button type="submit" class="btn btn-default" formnovalidate id="cancelupdatepet">Cancel</button></div>
 
                     </form>
 

@@ -1,15 +1,55 @@
+
+
+
 body {
   background-image: url('../images/catdog.jpg');
-  margin-left: 5px;
-  margin-right: 5px;
+  // margin-left: 5px;
+  // margin-right: 5px;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-color: #b0c4b0;
 }
 
+.bottom {
+  vertical-align: baseline;
+}
+
+td {
+  border: 0px;
+  text-align: right;
+}
+
+.jumbotron {
+  background-color: #fcf7ed;
+  position: fixed;
+  max-width: 800px;
+  // margin-left: 10%;
+  bottom: 10px;
+  // padding: 0 0 5;
+    // h2{
+    //     font-size: 1em;
+    // }
+    // p {
+    //     font-size: 1.5em;
+    //     // .btn {
+    //     //     padding: 0.5em;
+    //     // }
+    // }
+}
+
+// .card {
+//   background-color: #fcf7ed;
+//   margin-top: 400px;
+//   // margin-top: (winHeight / 2) + '40px';
+//   padding: 30px;
+//   margin-left: 80px;
+//   margin-right: 80px;
+//   min-height: 200px;
+// }
+
 .modal-header{
-     background-color:#b0c4b0;
+     background-color:#e8f2e8;
 }
 .modal-content {
     overflow:hidden;
@@ -47,7 +87,7 @@ h3 {
   font-size: 30px;
   color: #fff;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 18px;
 }
 
 .navbar-default {
@@ -185,11 +225,33 @@ h3 {
   text-align: left;
 }
 
+hr.style15 {
+	border-top: 4px double #8c8b8b;
+	text-align: center;
+}
+hr.style15:after {
+	content: '\002665';
+
+	display: inline-block;
+	position: relative;
+	top: -15px;
+	padding: 0 10px;
+	background: #f0f0f0;
+	color: #8c8b8b;
+	font-size: 18px;
+}
+
 .well {
   background-color: #fff;
   display: none;
-  margin-top: 25px;
+  margin-top: 20px;
   min-height: 800px;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#f4f2e1, #fff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#f4f2e1, #fff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#f4f2e1, #fff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#f4f2e1, #fff); /* Standard syntax */
+  // background-image: url('../images/light-faded-background.jpg');
 }
 
 // .form-control {

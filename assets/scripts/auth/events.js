@@ -128,12 +128,31 @@ const closeModal = function () {
   $('#signin-form').trigger('reset')
 }
 
+const cancelUpdate = function () {
+  event.preventDefault()
+  // $('#update-pet').show()
+  $('#update-pet')[0].reset()
+  $('#viewAddPetButtons').show()
+  api.myIndex()
+  .then(ui.onMyIndexSuccess)
+  .catch(ui.onMyIndexFailure)
+}
+
+const cancelNew = function () {
+  event.preventDefault()
+  $('#create-pet')[0].reset()
+  $('#viewAddPetButtons').show()
+  api.myIndex()
+  .then(ui.onMyIndexSuccess)
+  .catch(ui.onMyIndexFailure)
+}
+
 const addHandlers = () => {
   $('#signup-form').on('submit', onSignUp)
   $('#signin-form').on('submit', onSignIn)
   $('#changepassword-form').on('submit', onChangePassword)
   $('.signout-menu-item').on('click', onSignOut)
-  $('#viewMyPets').on('submit', onMyIndex)
+  // $('#viewMyPets').on('submit', onMyIndex)
   $('#add-pet-button').on('submit', populateAddPetForm)
   $('#updates-pet').on('submit', populateUpdatePetForm)
   $('#delete-pet').on('submit', deletePet)
@@ -143,6 +162,8 @@ const addHandlers = () => {
   $('#signup-close').on('click', closeModal)
   $('#signin-close').on('click', closeModal)
   $('#changepassword-close').on('click', closeModal)
+  $('#cancelupdatepet').on('submit', cancelUpdate)
+  $('#cancelnewpet').on('submit', cancelNew)
 }
 
 module.exports = {

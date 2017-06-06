@@ -8,9 +8,19 @@
    <tr class="item">
      <td valign="top" class="textContent">
        <!-- <img src=""{{img}}" width="50" height="75" class="itemImage"" /> -->
-       <h4 class="itemName">&#128062;  {{this.name}}</h4>
+       <h3 class="itemName">&#128062;  {{this.name}}</h4>
        <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Shot History:</b> {{this.shots}}</span><br />
        <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>DOB:</b> {{pet.dob}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Species (Cat, Dog):</b> {{pet.species}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Spayed/Neutered (if yes, enter date):</b> {{pet.spayed}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Gender:</b> {{pet.gender}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Breed:</b> {{pet.breed}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Color:</b> {{pet.color}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Purchase Date:</b> {{pet.purchased}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Microchip:</b> {{pet.microchip}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Weight:</b> {{pet.weight}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Veterinarian:</b> {{pet.vet}}</span><br />
+       <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Veterinarian Phone:</b> {{pet.vetphone}}</span><br />
        <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<b>Notes:</b> {{this.notes}}</span><br />
        <span class="contentSecondary">&nbsp; &nbsp; &nbsp; &nbsp;<data-id="{{this.id}}">Pet ID: {{this.id}}</span><br />
        <div>
@@ -22,6 +32,7 @@
     <br>
   </tr>
   <tr><td> </td></tr>
+  <hr class="style15"><br>
 
     {{/each}}
     {{else}}

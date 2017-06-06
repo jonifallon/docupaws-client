@@ -11,7 +11,7 @@ const hideItems = function () {
   $('.well').hide()
   $('.viewAllPets').empty()
   $('#create-pet')[0].reset()
-  $('#updates-pet')[0].reset()
+  // $('#updates-pet')[0].reset()
 }
 
 const onMyIndexSuccess = function (data) {
@@ -39,6 +39,7 @@ const onMyIndexSuccess = function (data) {
         .catch(onGetPetForUpdateFailure)
     $('#update-pet').show()
     $('.well').show()
+    // $('#add-pet-button').show()
   })
   // $('.update_myPet').
   // console.log('inside the onIndexSuccess in ui.js', data)
@@ -68,16 +69,16 @@ const onGetPetForUpdateSuccess = function (data) {
   $('#text-dob2').val(data.pet.dob)
   // console.log('name ', data.pet.name)
   $('#textarea-shots2').val(data.pet.shots)
-  $('#textarea-species2').val(data.pet.species)
-  $('#textarea-spayed2').val(data.pet.spayed)
-  $('#textarea-gender2').val(data.pet.gender)
-  $('#textarea-breed2').val(data.pet.breed)
-  $('#textarea-color2').val(data.pet.color)
-  $('#textarea-purchased2').val(data.pet.purchased)
-  $('#textarea-microchip2').val(data.pet.microchip)
-  $('#textarea-weight2').val(data.pet.weight)
-  $('#textarea-vet2').val(data.pet.vet)
-  $('#textarea-vetphone2').val(data.pet.vetphone)
+  $('#text-species2').val(data.pet.species)
+  $('#text-spayed2').val(data.pet.spayed)
+  $('#text-gender2').val(data.pet.gender)
+  $('#text-breed2').val(data.pet.breed)
+  $('#text-color2').val(data.pet.color)
+  $('#text-purchased2').val(data.pet.purchased)
+  $('#text-microchip2').val(data.pet.microchip)
+  $('#text-weight2').val(data.pet.weight)
+  $('#text-vet2').val(data.pet.vet)
+  $('#text-vetphone2').val(data.pet.vetphone)
 
   // console.log('shots ', data.pet.shots)
   $('#textarea-notes2').val(data.pet.notes)
@@ -206,7 +207,7 @@ const updatepetSuccess = (data) => {
   store.pet = data.pet
   // store.user = data.user
   $('#update-pet')[0].reset()
-  $('#viewAddPetButtons').show()
+  $('.viewAddPetButtons').show()
   api.myIndex()
   .then(onMyIndexSuccess)
   .catch(onMyIndexFailure)

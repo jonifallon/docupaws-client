@@ -8,6 +8,7 @@ const store = require('../store')
 const preLoadHide = require('../pre-load-hide')
 
 const onSignUp = function (event) {
+  console.log('inside onSignUp event')
   event.preventDefault()
   const data = getFormFields(this)
   api.signUp(data)
@@ -17,6 +18,7 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
+  console.log('inside onSignIn event')
   event.preventDefault()
   console.log('signin ran')
   const data = getFormFields(this)
@@ -28,7 +30,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  // console.log('signout ran')
+  console.log('signout ran')
 
   api.signOut()
   .then(ui.signOutSuccess)
@@ -37,7 +39,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  // console.log('change password ran!')
+  console.log('change password ran!')
   const data = getFormFields(this)
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
@@ -47,21 +49,17 @@ const onChangePassword = function (event) {
 }
 
 const onMyIndex = function () {
+  console.log('inside onMyIndex event')
   event.preventDefault()
   api.myIndex()
   .then(ui.onMyIndexSuccess)
   .catch(ui.onMyIndexFailure)
 }
 
-const populateAddPetForm = function (event) {
-  event.preventDefault()
-  $('#well').hide()
-  $('#create-pet').show()
-  $('.viewAddPetButtons').hide()
-  // console.log('inside populateAddPetForm')
-}
+
 
 const populateUpdatePetForm = function (event) {
+  console.log('inside populateUpdatePetForm event')
   // populate the create-pet form on the index page
   event.preventDefault()
   // captures the pet ID input by the user
@@ -75,6 +73,7 @@ const populateUpdatePetForm = function (event) {
 }
 
 const deletePet = function (event) {
+  console.log('inside deletePet event')
   event.preventDefault()
   const id = $(this).attr('data-id')
   api.deletePet(id)
@@ -94,8 +93,14 @@ const deletePet = function (event) {
 }
 
 const createpet = function (event) {
-  // console.log('inside the createpet function on events.js', event)
+  console.log('inside the createpet function on events.js', event)
   event.preventDefault()
+  // if user hits the submit button, do api.createpet
+  // if user hits the cancel button, go to cancelNew
+  if ($('#cancelnewpet').on('submit', cancelNew)) {
+    cancelNew()
+    return
+  }
   const data = getFormFields(this)
   api.createpet(data)
   .then(ui.createpetSuccess)
@@ -103,25 +108,42 @@ const createpet = function (event) {
   $('#create-pet')[0].reset()
 }
 
+const populateAddPetForm = function (event) {
+  console.log('inside populateAddPetForm event')
+  event.preventDefault()
+  $('.viewAllPets').hide()
+  $('#create-pet').show()
+  $('.viewAddPetButtons').hide()
+  // now go to a form that determines which button was submitted.  if submit, createpet.
+  // if cancel, cancelNew
+}
+
 const onUpdatePet = function (event) {
+  console.log('inside onUpdatePet function')
   event.preventDefault()
   console.log('inside the updatePet function in events, and events is', event)
   // const id = $(event.target).data('id')
   const id = store.data.pet.id
   console.log('id from the store is ', id)
   const data = getFormFields(this)
+  if ($('#cancelupdatepet').on('submit', cancelNew)) {
+    cancelUpdate()
+    return
+  }
   api.updatePet(id, data)
   .then(ui.updatepetSuccess)
   .catch(ui.updatepetFailure)
 }
 
 const hideSigninShowSignup = function () {
+  console.log('inside hideSigninShowSignup event')
   $('#signin-modal').modal('hide')
   $('#signup-modal').modal('show')
   $('#signin-error').hide()
 }
 
 const closeModal = function () {
+  console.log('inside closeModal event')
   preLoadHide.preLoad()
   $('#changepassword-form').trigger('reset')
   $('#signup-form').trigger('reset')
@@ -129,41 +151,69 @@ const closeModal = function () {
 }
 
 const cancelUpdate = function () {
+  console.log('inside cancelUpdate function')
   event.preventDefault()
   // $('#update-pet').show()
   $('#update-pet')[0].reset()
-  $('#viewAddPetButtons').show()
+  hideUpdatePet()
+  $('.viewAddPetButtons').show()
   api.myIndex()
   .then(ui.onMyIndexSuccess)
   .catch(ui.onMyIndexFailure)
 }
 
 const cancelNew = function () {
+  console.log('inside cancelNew event')
   event.preventDefault()
   $('#create-pet')[0].reset()
-  $('#viewAddPetButtons').show()
+  hideNewPet()
+  $('.viewAddPetButtons').show()
   api.myIndex()
   .then(ui.onMyIndexSuccess)
   .catch(ui.onMyIndexFailure)
 }
 
+const hideNewPet = function (event) {
+  console.log('inside hideNewPet function')
+  $('#create-pet').hide()
+  $('#newpetsubmit').off()
+  $('#newpetsubmit').prop('disabled', true)
+  // $('#add-pet-button').show()
+}
+
+const hideUpdatePet = function (event) {
+  console.log('inside hideUpdatePet function')
+  // event.preventDefault()
+  // resetTemplate1Fields()
+  $('#update-pet').hide()
+  $('#updatedpetsubmit').off()
+  $('#updatedpetsubmit').prop('disabled', true)
+}
+
 const addHandlers = () => {
+  // add pet handlers
+  $('#add-pet-button').on('submit', populateAddPetForm)
+  $('#create-pet').on('submit', createpet)
+  $('#cancelnewpet').on('submit', cancelNew)
+  // delete pet handlers
+  $('#delete-pet').on('submit', deletePet)
+  // update pet handlers
+  $('#update-pet').on('submit', onUpdatePet)
+  $('#cancelupdatepet').on('submit', cancelUpdate)
+  // auth handlers
+  $('#changepassword-form').on('submit', onChangePassword)
   $('#signup-form').on('submit', onSignUp)
   $('#signin-form').on('submit', onSignIn)
-  $('#changepassword-form').on('submit', onChangePassword)
   $('.signout-menu-item').on('click', onSignOut)
-  // $('#viewMyPets').on('submit', onMyIndex)
-  $('#add-pet-button').on('submit', populateAddPetForm)
-  $('#updates-pet').on('submit', populateUpdatePetForm)
-  $('#delete-pet').on('submit', deletePet)
-  $('#update-pet').on('submit', onUpdatePet)
-  $('#create-pet').on('submit', createpet)
+  $('#signupWithinSigninModal-button').on('click', hideSigninShowSignup)
+  $('#signup-close').on('click', closeModal)
+  $('#signin-close').on('click', closeModal)
   $('#signupWithinSigninModal-button').on('click', hideSigninShowSignup)
   $('#signup-close').on('click', closeModal)
   $('#signin-close').on('click', closeModal)
   $('#changepassword-close').on('click', closeModal)
-  $('#cancelupdatepet').on('submit', cancelUpdate)
-  $('#cancelnewpet').on('submit', cancelNew)
+  // $('#viewMyPets').on('submit', onMyIndex)
+  // $('#updates-pet').on('submit', populateUpdatePetForm)
 }
 
 module.exports = {

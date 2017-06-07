@@ -20,7 +20,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -36,7 +36,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" haspopup="true" expanded="false">My Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal"> Sign Up</a></li>
             <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"> Sign In</a></li>
@@ -235,78 +235,78 @@
 
                       <h3>Add a New Pet</h3>
 
-                      <h4>All fields are required</h4>
+                      <p>* indicates required field</p>
 
                       <div class="namefield">
-                        <label>Pet Name *</label>
-                        <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name" aria-required="false">
+                        <label>Pet Name </label>
+                        <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name" >
                       </div>
 
                       <div class="shotsfield">
-                        <label>Shot History *</label>
-                        <textarea type="textarea" required="false" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" aria-required="true"></textarea>
+                        <label>Shot History </label>
+                        <textarea type="textarea"  placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" ></textarea>
                       </div>
 
                       <div class="dobfield">
-                        <label>DOB *</label>
-                        <input  type="text" required="false" placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob" aria-required="false">
+                        <label>DOB </label>
+                        <input  type="text"  placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob" >
                       </div>
 
                       <div class="speciesfield">
-                        <label>Species *</label>
-                        <input  type="text" required="false" placeholder="Cat or Dog?" class="form-control" name="pet[species]" id="text-species" aria-required="false">
+                        <label>Species </label>
+                        <input  type="text"  placeholder="Cat or Dog?" class="form-control" name="pet[species]" id="text-species" >
                       </div>
 
                       <div class="spayedfield">
-                        <label>Spayed or Neutered *</label>
-                        <input  type="text" required="false" placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed" aria-required="false">
+                        <label>Spayed or Neutered </label>
+                        <input  type="text"  placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed" >
                       </div>
 
                       <div class="genderfield">
-                        <label>Gender *</label>
-                        <input  type="text" required="false" placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender" aria-required="false">
+                        <label>Gender </label>
+                        <input  type="text"  placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender" >
                       </div>
 
                       <div class="breedfield">
-                        <label>Breed *</label>
-                        <input  type="text" required="false" placeholder="Breed" class="form-control" name="pet[breed]" id="text-breed" aria-required="false">
+                        <label>Breed </label>
+                        <input  type="text"  placeholder="Breed" class="form-control" name="pet[breed]" id="text-breed" >
                       </div>
 
                       <div class="colorfield">
-                        <label>Color *</label>
-                        <input  type="text" required="false" placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color" aria-required="false">
+                        <label>Color </label>
+                        <input  type="text"  placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color" >
                       </div>
 
                       <div class="purchasedfield">
-                        <label>Purchased Date *</label>
-                        <input  type="text" required="false" placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased" aria-required="false">
+                        <label>Purchased Date </label>
+                        <input  type="text"  placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased" >
                       </div>
 
                       <div class="microchipfield">
-                        <label>Microchip # *</label>
-                        <input  type="text" required="false" placeholder="Microchip #" class="form-control" name="pet[microchip]" id="text-microchip" aria-required="false">
+                        <label>Microchip # </label>
+                        <input  type="text"  placeholder="Microchip #" class="form-control" name="pet[microchip]" id="text-microchip" >
                       </div>
 
                       <div class="weightfield">
-                        <label>Weight *</label>
-                        <input  type="text" required="false" placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight" aria-required="false">
+                        <label>Weight </label>
+                        <input  type="text"  placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight" >
                       </div>
 
                       <div class="vetfield">
-                        <label>Veterinarian *</label>
-                        <input  type="text" required="false" placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet" aria-required="false">
+                        <label>Veterinarian </label>
+                        <input  type="text"  placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet" >
                       </div>
 
                       <div class="vetphonefield">
-                        <label>Veterinarian Phone *</label>
-                        <input  type="text" required="false" placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone" aria-required="false">
+                        <label>Veterinarian Phone </label>
+                        <input  type="text"  placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone" >
                       </div>
 
 
 
                       <div class="notesfield">
-                       <label>Notes *</label>
-                       <textarea type="textarea" required="false" placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
+                       <label>Notes </label>
+                       <textarea type="textarea"  placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
                       </div>
 
                       <br>
@@ -324,72 +324,72 @@
 
                       <div class="shotsfield">
                         <label>Shot History</label>
-                      <textarea type="textarea" required="false" placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
+                      <textarea type="textarea"  placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
                      </div>
 
                      <div class="dobfield">
                        <label>DOB</label>
-                       <input type="text" required="false" placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob2">
+                       <input type="text"  placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob2">
                      </div>
 
                      <div class="speciesfield">
                        <label>Species</label>
-                       <input type="text" required="false" placeholder="Cat or Dog?" class="form-control" name="pet[species]" id="text-species2" aria-required="false">
+                       <input type="text"  placeholder="Cat or Dog?" class="form-control" name="pet[species]" id="text-species2" >
                      </div>
 
                      <div class="spayedfield">
                        <label>Spayed or Neutered</label>
-                       <input type="text" required="false" placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed2" aria-required="false">
+                       <input type="text"  placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed2" >
                      </div>
 
                      <div class="genderfield">
                        <label>Gender</label>
-                       <input type="text" required="false" placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender2" aria-required="false">
+                       <input type="text"  placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender2" >
                      </div>
 
                      <div class="breedfield">
                        <label>Breed</label>
-                       <input type="text" required="false" placeholder="Breed (if known)" class="form-control" name="pet[breed]" id="text-breed2" aria-required="false">
+                       <input type="text"  placeholder="Breed (if known)" class="form-control" name="pet[breed]" id="text-breed2" >
                      </div>
 
                      <div class="colorfield">
                        <label>Color</label>
-                       <input type="text" required="false" placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color2" aria-required="false">
+                       <input type="text"  placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color2" >
                      </div>
 
                      <div class="purchasedfield">
                        <label>Purchased Date</label>
-                       <input type="text" required="false" placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased2" aria-required="false">
+                       <input type="text"  placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased2" >
                      </div>
 
                      <div class="microchipfield">
                        <label>Microchip #</label>
-                       <input type="text" required="false" placeholder="Microchip # (if applicable)" class="form-control" name="pet[microchip]" id="text-microchip2" aria-required="false">
+                       <input type="text"  placeholder="Microchip # (if applicable)" class="form-control" name="pet[microchip]" id="text-microchip2" >
                      </div>
 
                      <div class="weightfield">
                        <label>Weight</label>
-                       <input type="text" required="false" placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight2" aria-required="false">
+                       <input type="text"  placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight2" >
                      </div>
 
                      <div class="vetfield">
                        <label>Veterinarian</label>
-                       <input type="text" required="false" placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet2" aria-required="false">
+                       <input type="text"  placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet2" >
                      </div>
 
                      <div class="vetphonefield">
                        <label>Veterinarian Phone</label>
-                       <input type="text" required="false" placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone2" aria-required="false">
+                       <input type="text"  placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone2" >
                      </div>
 
 
                      <div class="notesfield">
                        <label>Notes</label>
-                       <textarea type="textarea" required="false" placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
+                       <textarea type="textarea"  placeholder="Add other important information here!" class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
                      </div>
 
                      <br>
-                     <div><button type="submit" required="false" style="success" id="updatedpetsubmit">Submit</button> <button type="submit" class="btn btn-default" formnovalidate id="cancelupdatepet">Cancel</button></div>
+                     <div><button type="submit"  style="success" id="updatedpetsubmit">Submit</button> <button type="submit" class="btn btn-default" formnovalidate id="cancelupdatepet">Cancel</button></div>
 
                     </form>
 

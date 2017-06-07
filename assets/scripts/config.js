@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://safe-mesa-23831.herokuapp.com/'
+    production: 'https://safe-mesa-23831.herokuapp.com'
   }
 }
 

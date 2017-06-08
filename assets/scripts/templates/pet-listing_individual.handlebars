@@ -1,6 +1,9 @@
 
-<h1 id="pets_list">My Pets</h1>
-<br><br><br>
+<!-- <h1 id="pets_list">&#10084; My Pets &#10084;</h1> -->
+<h1 class="banner">My Pets</h1>
+<br>
+<div id="printpage"><A HREF="javascript:window.print()">Print This Page</A></div>
+<br><br>
 
 {{#if pets}}
 
@@ -8,7 +11,11 @@
    <tr class="item">
      <td valign="top" class="textContent">
        <!-- <img src=""{{img}}" width="50" height="75" class="itemImage"" /> -->
-       <h3 class="itemName">{{this.name}}</h4>
+
+       <div class="panel panel-warning">
+       <div class="panel-heading">
+       <h3 class="itemName">&#10084; {{this.name}}</h3></div>
+         <div class="panel-body">
        <span class="contentSecondary"><b>Shot History:</b> {{this.shots}}</span><br />
        <span class="contentSecondary"><b>DOB:</b> {{pet.dob}}</span><br />
        <span class="contentSecondary"><b>Species:</b> {{pet.species}}</span><br />
@@ -31,8 +38,11 @@
     </td>
     <br>
   </tr>
+</div><!--end panel body-->
+</div><!--end panels-->
   <tr><td> </td></tr>
-  <hr class="style15"><br>
+  <!-- <hr class="style15"> -->
+  <br>
 
     {{/each}}
     {{else}}

@@ -55,9 +55,15 @@ td {
     overflow:hidden;
 }
 
+.banner {
+  color: #001d61;
+  text-align: center;
+}
+
 
 #add-pet-button {
   float: right;
+  margin-right: 2%;
 }
 
 h1 {
@@ -182,8 +188,8 @@ h3 {
 }
 
 .itemName {
-  font-size: 20px;
-  color: #001d61;
+  font-size: 24px;
+  color: #337732;
 }
 
 #pets_list {
@@ -205,8 +211,14 @@ h3 {
 }
 
 .viewAllPets {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#printpage {
+  font-size: 16px;
+  float: right;
+  padding: 1px;
 }
 
 // add these to functions so they appear when appropriate
@@ -256,12 +268,12 @@ hr.style15:after {
   display: none;
   margin-top: 20px;
   min-height: 800px;
-  background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#f4f2e1, #fff); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#f4f2e1, #fff); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#f4f2e1, #fff); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#f4f2e1, #fff); /* Standard syntax */
-  // background-image: url('../images/light-faded-background.jpg');
+  // background: red; /* For browsers that do not support gradients */
+  // background: -webkit-linear-gradient(#f4f2e1, #fff); /* For Safari 5.1 to 6.0 */
+  // background: -o-linear-gradient(#f4f2e1, #fff); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(#f4f2e1, #fff); /* For Firefox 3.6 to 15 */
+  // background: linear-gradient(#f4f2e1, #fff); /* Standard syntax */
+  // // background-image: url('../images/light-faded-background.jpg');
 }
 
 // .form-control {

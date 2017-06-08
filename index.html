@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Docu-Paws</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+
+<div class="mybackground">
+      <!--begin nav bar-->
+<div class="mobile-hide">
+<ul class="cb-slideshow">
+	<li>
+		<span>Image 01</span>
+		<div>
+			<h3>you love them</h3>
+		</div>
+	</li>
+  <li>
+    <span>Image 01</span>
+    <div>
+      <h3>they love you</h3>
+    </div>
+  </li>
+  <li>
+    <span>Image 01</span>
+    <div>
+      <h3>&#10084; keep them healthy &#10084;</h3>
+    </div>
+  </li>
+
+</ul>
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#about-modal" data-toggle="modal" data-target="#about-modal">About Docu-Paws</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" haspopup="true" expanded="false">My Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal"> Sign Up</a></li>
+            <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"> Sign In</a></li>
+            <li class="change-password-menu-item"><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
+            <li class="signout-menu-item"><a href="#">Sign Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<!--end nav bar-->
+
+<!--begin about modal-->
+
+  <div class="modal fade" id="about-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">  Welcome to Docu-Paws!</h4>
+        </div>
+        <div class="modal-body">
+          <p>Docu-Paws is a record-keeping site for your pet’s medical information.
+            It's the perfect way to keep track of your pet’s age, vaccines, medical conditions,
+            prescription meds, etc.  With Docu-Paws, all information that is important to have
+            in case of a pet emergency is kept together in one place.</p>
+          <br><br>
+          <!-- <center><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" id="getStartedWithinAboutModal-button" class="btn btn-success btn-lg">Get Started</button></a>
+          <center> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end about modal-->
+
+
+
+  <!--begin signup modal-->
+
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title-signup"><span class="glyphicon glyphicon-pencil"></span> &#xa0; Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <!--  Start of auth error handling-->
+          <div class='alert alert-danger' id='signup-error' role='alert'>
+            <strong>Sorry!</strong> Please try again and ensure both passwords match exactly.
+          </div>
+          <!--begin signup form-->
+          <form id="signup-form">
+            <fieldset>
+              <legend>Please enter an email address and password.</legend>
+              <input type="text" name="credentials[email]" id="signup-email" placeholder="Enter Email">
+              <input type="password" name="credentials[password]" id="signup-password" placeholder="Enter Password">
+              <input type="password" name="credentials[password_confirmation]" id="signup-passwordconfirm" placeholder="Confirm password">
+              <!-- <input type="submit" name="submit" value="Sign up!"> -->
+              <!-- <button type="button" class="btn btn-default" name="submit">Sign Up!</button> -->
+              <br><br>
+              <button type="submit" class="btn btn-primary" style="primary">Sign Up!</button>
+            </fieldset>
+          </form>
+          <!--end signup form-->
+        </div>
+        <div class="modal-footer">
+          <button id="signup-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end signup modal-->
+
+
+  <!--begin signin modal-->
+
+  <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title-signin"><span class="glyphicon glyphicon-log-in"></span> &#xa0; Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" id='signin-error' role="alert">
+            <strong>Sorry!</strong> You did not successfully sign in.  Please try again.
+          </div>
+          <!--begin signin form-->
+          <form id="signin-form">
+            <fieldset>
+              <legend>Please enter your login credentials below.</legend>
+
+              <input type="text" name="credentials[email]" id="sign-in email" placeholder="Enter Email">
+              <input type="password" name="credentials[password]" id="sign-in password" placeholder="Enter Password">
+              <br>
+              <br>
+              <button type="submit" class="btn btn-primary" style="primary">Sign In</button>
+              <br><br><br>
+              <p><span class="glyphicon glyphicon-pencil"></span> &#xa0;Don't yet have an account? Please <button id="signupWithinSigninModal-button" type="button" class="btn btn-default" data-dismiss="modal">Sign Up</button></p>
+            </fieldset>
+          </form>
+          <!--end signin form-->
+        </div>
+        <div class="modal-footer">
+          <button id="signin-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end signin modal-->
+
+
+  <!--begin changepassword modal-->
+
+  <div class="modal fade" id="changepassword-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><span class="glyphicon glyphicon-edit"></span>&#xa0; Change Password</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" id='changepw-error' role="alert">
+            <strong>Sorry!</strong> Change password failed. Please try again.
+          </div>
+          <!--begin changepassword form-->
+          <form id="changepassword-form">
+            <fieldset>
+              <legend></legend>
+              <input type="password" name="passwords[old]" id="old password" placeholder="old password">
+              <input type="password" name="passwords[new]" id="new password" placeholder="new password">
+              <br><br>
+              <button type="submit" class="btn btn-primary" style="primary">Change Password</button>
+            </fieldset>
+          </form>
+          <!--end changepassword form-->
+        </div>
+        <div class="modal-footer">
+          <button id="changepassword-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <!--end changepassword modal-->
+
+
+      <div class="col-md-12" >
+          <div class="row">
+            <div id="greeting">
+              <div id="docupaws">Docu-Paws</div>
+              <div id="welcome">The convenient way to track your pet's medical information!</div>
+              <!--use &#128062; if font-awesome isn't ok-->
+
+              <div id="getstartedbutton"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-default btn-lg">&#128062; &#xa0;  Get Started</button></a></div>
+            </div>
+
+                  <div class="well well-lg">
+
+                    <div class='viewAddPetButtons'>
+                        <form id="add-pet-button">
+                          <br>
+                             <button type="submit" data-toggle="modal" data-target="#addpet-modal" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> Add A Pet</button>
+                           <br><br>
+                        </form>
+
+                        <!-- <form id="updates-pet">
+                        </form> -->
+
+                      </div>
+
+                      <!--put a modal here for the add pet form-->
+
+
+
+                    <form id="create-pet">
+
+                      <h3>Add a New Pet</h3>
+
+                      <div class="namefield">
+                        <label>Pet Name (required)</label>
+                        <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name" >
+                      </div>
+
+                      <!-- <div class="shotsfield">
+                        <label>Shot History </label>
+                        <textarea type="textarea"  placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" ></textarea>
+                      </div> -->
+
+                      <div class="dobfield">
+                        <label>DOB </label>
+                        <input  type="date"  placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob" >
+                      </div>
+
+                      <!-- <div class="speciesfield">
+                        <label>Species </label>
+                        <input  type="text"  placeholder="Enter pet species" class="form-control" name="pet[species]" id="text-species" >
+                      </div> -->
+
+                      <div class="spayedfield">
+                        <label>Spayed or Neutered </label>
+                        <input  type="text"  placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed" >
+                      </div>
+
+                      <div class="genderfield">
+                        <label>Gender, Species </label>
+                        <input  type="text"  placeholder="Male or Female, Cat or Dog" class="form-control" name="pet[gender]" id="text-gender" >
+                      </div>
+
+                      <!-- <div class="breedfield">
+                        <label>Breed </label>
+                        <input  type="text"  placeholder="Breed" class="form-control" name="pet[breed]" id="text-breed" >
+                      </div> -->
+
+                      <div class="colorfield">
+                        <label>Color and Breed </label>
+                        <input  type="text"  placeholder="Pet Color and Breed" class="form-control" name="pet[color]" id="text-color" >
+                      </div>
+
+                      <div class="purchasedfield">
+                        <label>Purchased Date </label>
+                        <input  type="date"  placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased" >
+                      </div>
+
+                      <div class="microchipfield">
+                        <label>Microchip # </label>
+                        <input  type="text"  placeholder="Microchip #" class="form-control" name="pet[microchip]" id="text-microchip" >
+                      </div>
+
+                      <div class="weightfield">
+                        <label>Weight </label>
+                        <input  type="text"  placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight" >
+                      </div>
+
+                      <div class="vetfield">
+                        <label>Vet Contact Info </label>
+                        <input  type="text"  placeholder="Veterinarian Name and Phone" class="form-control" name="pet[vet]" id="text-vet" >
+                      </div>
+
+                      <!-- <div class="vetphonefield">
+                        <label>Veterinarian Phone </label>
+                        <input  type="text"  placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone" >
+                      </div> -->
+
+
+
+                      <div class="notesfield">
+                       <label>Notes </label>
+                       <textarea type="textarea"  placeholder="Add other important information such as prescription meds and vaccine history." class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
+                      </div>
+
+                      <br>
+
+                      <div><button type="submit" class="btn btn-success" style="success" id="newpet">Submit</button>  <button type="submit" class="btn btn-default" formnovalidate id="cancelnewpet">Cancel</button>
+                      </div>
+                    </form>
+
+
+
+
+
+                    <form id="update-pet">
+                        <h3>Update a Pet</h3>
+                      <div class="namefield">
+                        <label>Pet Name</label>
+                        <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name2">
+                      </div>
+
+                      <!-- <div class="shotsfield">
+                        <label>Shot History</label>
+                      <textarea type="textarea"  placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
+                     </div> -->
+
+                     <div class="dobfield">
+                       <label>DOB</label>
+                       <input type="date"  placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob2">
+                     </div>
+
+                     <!-- <div class="speciesfield">
+                       <label>Species</label>
+                       <input type="text"  placeholder="Enter pet species" class="form-control" name="pet[species]" id="text-species2" >
+                     </div> -->
+
+                     <div class="spayedfield">
+                       <label>Spayed or Neutered</label>
+                       <input type="text"  placeholder="Spayed or Neutered?  (if yes, enter date)" class="form-control" name="pet[spayed]" id="text-spayed2" >
+                     </div>
+
+                     <div class="genderfield">
+                       <label>Gender + Species</label>
+                       <input type="text"  placeholder="Male or Female, Cat or Dog" class="form-control" name="pet[gender]" id="text-gender2" >
+                     </div>
+
+                     <!-- <div class="breedfield">
+                       <label>Breed</label>
+                       <input type="text"  placeholder="Breed (if known)" class="form-control" name="pet[breed]" id="text-breed2" >
+                     </div> -->
+
+                     <div class="colorfield">
+                       <label>Color + Breed</label>
+                       <input type="text"  placeholder="Pet Color and Breed" class="form-control" name="pet[color]" id="text-color2" >
+                     </div>
+
+                     <div class="purchasedfield">
+                       <label>Purchased Date</label>
+                       <input type="date"  placeholder="Purchased Date" class="form-control" name="pet[purchased]" id="text-purchased2" >
+                     </div>
+
+                     <div class="microchipfield">
+                       <label>Microchip #</label>
+                       <input type="text"  placeholder="Microchip # (if applicable)" class="form-control" name="pet[microchip]" id="text-microchip2" >
+                     </div>
+
+                     <div class="weightfield">
+                       <label>Weight</label>
+                       <input type="text"  placeholder="Weight" class="form-control" name="pet[weight]" id="text-weight2" >
+                     </div>
+
+                     <div class="vetfield">
+                       <label>Vet Contact Info</label>
+                       <input type="text"  placeholder="Veterinarian Name and Phone" class="form-control" name="pet[vet]" id="text-vet2" >
+                     </div>
+
+                     <!-- <div class="vetphonefield">
+                       <label>Veterinarian Phone</label>
+                       <input type="text"  placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone2" >
+                     </div> -->
+
+
+                     <div class="notesfield">
+                       <label>Notes</label>
+                       <textarea type="textarea"  placeholder="Add other important information such as prescription meds and vaccine history." class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
+                     </div>
+
+                     <br>
+                     <div><button type="submit"  style="success" id="updatedpetsubmit">Submit</button> <button type="submit" class="btn btn-default" formnovalidate id="cancelupdatepet">Cancel</button></div>
+
+                    </form>
+
+
+                    <div class="viewAllPets"></div>
+
+                  </div>
+
+
+
+                  <!-- <div class="container">
+                    <div class="jumbotron">
+                      <h3>About Docu-Paws</h3>
+
+                      <p>Docu-Paws is a record-keeping site for your pet’s medical information.
+                        It's the perfect way to keep track of your pet’s age, vaccines, medical conditions,
+                        prescription meds, etc.  With Docu-Paws, all information that is important to have
+                        in case of a pet emergency is kept together in one place.</p>
+
+                        <div id="getstartedbutton"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-hand-up"></span>   Get Started</button></a></div>
+                    </div>
+                  </div> -->
+
+
+</div><!--end mybackground div-->
+    </body>
+</html>

@@ -43,7 +43,15 @@
   <tr><td> </td></tr>
   <!-- <hr class="style15"> -->
   <br>
+  <div class="rowflex">
+    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
 
+    <!-- Add the extra clearfix for only the required viewport -->
+    <div class="clearfix visible-xs-block"></div>
+
+
+    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+  </div>
     {{/each}}
     {{else}}
     <div><h3>You have no pets to display at this time.  You may create an pet by selecting the <b>Add A Pet</b> button.</h3></div>

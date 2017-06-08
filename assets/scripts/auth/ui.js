@@ -120,6 +120,7 @@ const signInSuccess = (data) => {
   $('.viewAddPetButtons').show()
   $('#signin-modal').modal('hide')
   $('#signin-error').hide()
+  $('.cb-slideshow').hide()
   hideItems()
   api.myIndex()
   .then(onMyIndexSuccess)

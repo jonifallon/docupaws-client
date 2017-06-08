@@ -260,27 +260,25 @@
 
                       <h3>Add a New Pet</h3>
 
-                      <p>* indicates required field</p>
-
                       <div class="namefield">
-                        <label>Pet Name </label>
+                        <label>Pet Name (required)</label>
                         <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name" >
                       </div>
 
-                      <div class="shotsfield">
+                      <!-- <div class="shotsfield">
                         <label>Shot History </label>
                         <textarea type="textarea"  placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots" ></textarea>
-                      </div>
+                      </div> -->
 
                       <div class="dobfield">
                         <label>DOB </label>
                         <input  type="date"  placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob" >
                       </div>
 
-                      <div class="speciesfield">
+                      <!-- <div class="speciesfield">
                         <label>Species </label>
                         <input  type="text"  placeholder="Enter pet species" class="form-control" name="pet[species]" id="text-species" >
-                      </div>
+                      </div> -->
 
                       <div class="spayedfield">
                         <label>Spayed or Neutered </label>
@@ -288,18 +286,18 @@
                       </div>
 
                       <div class="genderfield">
-                        <label>Gender </label>
-                        <input  type="text"  placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender" >
+                        <label>Gender, Species </label>
+                        <input  type="text"  placeholder="Male or Female, Cat or Dog" class="form-control" name="pet[gender]" id="text-gender" >
                       </div>
 
-                      <div class="breedfield">
+                      <!-- <div class="breedfield">
                         <label>Breed </label>
                         <input  type="text"  placeholder="Breed" class="form-control" name="pet[breed]" id="text-breed" >
-                      </div>
+                      </div> -->
 
                       <div class="colorfield">
-                        <label>Color </label>
-                        <input  type="text"  placeholder="Pet Color" class="form-control" name="pet[color]" id="text-color" >
+                        <label>Color and Breed </label>
+                        <input  type="text"  placeholder="Pet Color and Breed" class="form-control" name="pet[color]" id="text-color" >
                       </div>
 
                       <div class="purchasedfield">
@@ -318,20 +316,20 @@
                       </div>
 
                       <div class="vetfield">
-                        <label>Veterinarian </label>
-                        <input  type="text"  placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet" >
+                        <label>Vet Contact Info </label>
+                        <input  type="text"  placeholder="Veterinarian Name and Phone" class="form-control" name="pet[vet]" id="text-vet" >
                       </div>
 
-                      <div class="vetphonefield">
+                      <!-- <div class="vetphonefield">
                         <label>Veterinarian Phone </label>
                         <input  type="text"  placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone" >
-                      </div>
+                      </div> -->
 
 
 
                       <div class="notesfield">
                        <label>Notes </label>
-                       <textarea type="textarea"  placeholder="Add other important information such as prescription meds." class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
+                       <textarea type="textarea"  placeholder="Add other important information such as prescription meds and vaccine history." class="form-control" name="pet[notes]" id="textarea-notes"></textarea>
                       </div>
 
                       <br>
@@ -347,20 +345,20 @@
                         <input type="text" required="true" placeholder="Insert Pet Name" class="form-control" name="pet[name]" id="text-name2">
                       </div>
 
-                      <div class="shotsfield">
+                      <!-- <div class="shotsfield">
                         <label>Shot History</label>
                       <textarea type="textarea"  placeholder="Enter shot type and dates, separated by commas." class="form-control" name="pet[shots]" id="textarea-shots2"></textarea>
-                     </div>
+                     </div> -->
 
                      <div class="dobfield">
                        <label>DOB</label>
                        <input type="date"  placeholder="Date of Birth" class="form-control" name="pet[dob]" id="text-dob2">
                      </div>
 
-                     <div class="speciesfield">
+                     <!-- <div class="speciesfield">
                        <label>Species</label>
                        <input type="text"  placeholder="Enter pet species" class="form-control" name="pet[species]" id="text-species2" >
-                     </div>
+                     </div> -->
 
                      <div class="spayedfield">
                        <label>Spayed or Neutered</label>
@@ -372,10 +370,10 @@
                        <input type="text"  placeholder="Male or Female" class="form-control" name="pet[gender]" id="text-gender2" >
                      </div>
 
-                     <div class="breedfield">
+                     <!-- <div class="breedfield">
                        <label>Breed</label>
                        <input type="text"  placeholder="Breed (if known)" class="form-control" name="pet[breed]" id="text-breed2" >
-                     </div>
+                     </div> -->
 
                      <div class="colorfield">
                        <label>Color</label>
@@ -398,19 +396,19 @@
                      </div>
 
                      <div class="vetfield">
-                       <label>Veterinarian</label>
-                       <input type="text"  placeholder="Veterinarian Name" class="form-control" name="pet[vet]" id="text-vet2" >
+                       <label>Vet Contact Info</label>
+                       <input type="text"  placeholder="Veterinarian Name and Phone" class="form-control" name="pet[vet]" id="text-vet2" >
                      </div>
 
-                     <div class="vetphonefield">
+                     <!-- <div class="vetphonefield">
                        <label>Veterinarian Phone</label>
                        <input type="text"  placeholder="Veterinarian Phone" class="form-control" name="pet[vetphone]" id="text-vetphone2" >
-                     </div>
+                     </div> -->
 
 
                      <div class="notesfield">
                        <label>Notes</label>
-                       <textarea type="textarea"  placeholder="Add other important information such as prescription meds." class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
+                       <textarea type="textarea"  placeholder="Add other important information such as prescription meds and vaccine history." class="form-control" name="pet[notes]" id="textarea-notes2"></textarea>
                      </div>
 
                      <br>

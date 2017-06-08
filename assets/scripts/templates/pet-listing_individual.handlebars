@@ -16,18 +16,18 @@
        <div class="panel-heading">
        <h3 class="itemName">&#10084; {{this.name}}</h3></div>
          <div class="panel-body">
-       <span class="contentSecondary"><b>Shot History:</b> {{this.shots}}</span><br />
+       <!-- <span class="contentSecondary"><b>Shot History:</b> {{this.shots}}</span><br /> -->
        <span class="contentSecondary"><b>DOB:</b> {{pet.dob}}</span><br />
-       <span class="contentSecondary"><b>Species:</b> {{pet.species}}</span><br />
+       <!-- <span class="contentSecondary"><b>Species:</b> {{pet.species}}</span><br /> -->
        <span class="contentSecondary"><b>Spayed/Neutered (if yes, enter date):</b> {{pet.spayed}}</span><br />
-       <span class="contentSecondary"><b>Gender:</b> {{pet.gender}}</span><br />
-       <span class="contentSecondary"><b>Breed:</b> {{pet.breed}}</span><br />
-       <span class="contentSecondary"><b>Color:</b> {{pet.color}}</span><br />
+       <span class="contentSecondary"><b>Gender + Species:</b> {{pet.gender}}</span><br />
+       <!-- <span class="contentSecondary"><b>Breed:</b> {{pet.breed}}</span><br /> -->
+       <span class="contentSecondary"><b>Color + Breed:</b> {{pet.color}}</span><br />
        <span class="contentSecondary"><b>Purchase Date:</b> {{pet.purchased}}</span><br />
        <span class="contentSecondary"><b>Microchip:</b> {{pet.microchip}}</span><br />
        <span class="contentSecondary"><b>Weight:</b> {{pet.weight}}</span><br />
-       <span class="contentSecondary"><b>Veterinarian:</b> {{pet.vet}}</span><br />
-       <span class="contentSecondary"><b>Veterinarian Phone:</b> {{pet.vetphone}}</span><br />
+       <span class="contentSecondary"><b>Vet Contact:</b> {{pet.vet}}</span><br />
+       <!-- <span class="contentSecondary"><b>Veterinarian Phone:</b> {{pet.vetphone}}</span><br /> -->
        <span class="contentSecondary"><b>Notes:</b> {{this.notes}}</span><br />
        <span class="contentSecondary"><data-id="{{this.id}}">Pet ID: {{this.id}}</span><br />
        <div>
@@ -43,16 +43,9 @@
   <tr><td> </td></tr>
   <!-- <hr class="style15"> -->
   <br>
-  <div class="rowflex">
-    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
 
-    <!-- Add the extra clearfix for only the required viewport -->
-    <div class="clearfix visible-xs-block"></div>
-
-
-    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-  </div>
     {{/each}}
+
     {{else}}
     <div><h3>You have no pets to display at this time.  You may create an pet by selecting the <b>Add A Pet</b> button.</h3></div>
     {{/if}}

@@ -4,7 +4,7 @@
 <br>
 <!-- <div class="printpage"><A HREF="javascript:window.print()">Print This Page</A></div> -->
 
-
+<div class="row">
 {{#if pets}}
 
 {{#each pets as |pet|}}
@@ -12,39 +12,104 @@
      <td valign="top" class="textContent">
        <!-- <img src=""{{img}}" width="50" height="75" class="itemImage"" /> -->
 
-       <div class="panel panel-warning">
+       <!-- <div class="panel panel-warning">
        <div class="panel-heading">
        <h3 class="itemName">&#10084; {{this.name}}</h3></div>
-         <div class="panel-body">
+         <div class="panel-body"> -->
        <!-- <span class="contentSecondary"><b>Shot History:</b> {{this.shots}}</span><br /> -->
-       <span class="contentSecondary"><b>DOB:</b> {{pet.dob}}</span><br />
+       <!-- <span class="contentSecondary"><b>DOB:</b> {{pet.dob}}</span><br /> -->
        <!-- <span class="contentSecondary"><b>Species:</b> {{pet.species}}</span><br /> -->
-       <span class="contentSecondary"><b>Spayed/Neutered (if yes, enter date):</b> {{pet.spayed}}</span><br />
-       <span class="contentSecondary"><b>Gender + Species:</b> {{pet.gender}}</span><br />
+       <!-- <span class="contentSecondary"><b>Spayed/Neutered (if yes, enter date):</b> {{pet.spayed}}</span><br />
+       <span class="contentSecondary"><b>Gender + Species:</b> {{pet.gender}}</span><br /> -->
        <!-- <span class="contentSecondary"><b>Breed:</b> {{pet.breed}}</span><br /> -->
-       <span class="contentSecondary"><b>Color + Breed:</b> {{pet.color}}</span><br />
+       <!-- <span class="contentSecondary"><b>Color + Breed:</b> {{pet.color}}</span><br />
        <span class="contentSecondary"><b>Purchase Date:</b> {{pet.purchased}}</span><br />
        <span class="contentSecondary"><b>Microchip:</b> {{pet.microchip}}</span><br />
        <span class="contentSecondary"><b>Weight:</b> {{pet.weight}}</span><br />
-       <span class="contentSecondary"><b>Vet Contact:</b> {{pet.vet}}</span><br />
+       <span class="contentSecondary"><b>Vet Contact:</b> {{pet.vet}}</span><br /> -->
        <!-- <span class="contentSecondary"><b>Veterinarian Phone:</b> {{pet.vetphone}}</span><br /> -->
-       <span class="contentSecondary"><b>Notes:</b> {{this.notes}}</span><br />
-       <span class="contentSecondary"><data-id="{{this.id}}">Pet ID: {{this.id}}</span><br />
-       <div>
+       <!-- <span class="contentSecondary"><b>Notes:</b> {{this.notes}}</span><br />
+       <span class="contentSecondary"><data-id="{{this.id}}">Pet ID: {{this.id}}</span><br /> -->
+       <!-- <div>
          <br>
          <p><button class="btn btn-warning delete_myPet" name="button" data-id="{{this.id}}">Delete</button>
          &nbsp; &nbsp;<button class="btn btn-success update-myPet" name="button" data-id="{{this.id}}">Update</button></p>
       </div>
     </td>
     <br>
-  </tr>
-</div><!--end panel body-->
-</div><!--end panels-->
-  <tr><td> </td></tr>
+  </tr> -->
+<!-- </div><!end panel body-->
+<!-- </div><!end panels-->
+  <!-- <tr><td> </td></tr> -->
   <!-- <hr class="style15"> -->
-  <br>
-    {{/each}}
 
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="row"> -->
+  <div class="col-sm-6 col-md-4">
+    <!-- <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3> -->
+        <p>
+          <div class="panel panel-warning">
+          <div class="panel-heading">
+          <h3 class="itemName">&#10084; {{this.name}}</h3></div>
+            <div class="panel-body">
+          <!-- <span class="contentSecondary"><b>Shot History:</b> {{this.shots}}</span><br /> -->
+          <span class="contentSecondary"><b>DOB:</b> {{pet.dob}}</span><br />
+          <!-- <span class="contentSecondary"><b>Species:</b> {{pet.species}}</span><br /> -->
+          <span class="contentSecondary"><b>Spayed/Neutered (if yes, enter date):</b> {{pet.spayed}}</span><br />
+          <span class="contentSecondary"><b>Gender + Species:</b> {{pet.gender}}</span><br />
+          <!-- <span class="contentSecondary"><b>Breed:</b> {{pet.breed}}</span><br /> -->
+          <span class="contentSecondary"><b>Color + Breed:</b> {{pet.color}}</span><br />
+          <span class="contentSecondary"><b>Purchase Date:</b> {{pet.purchased}}</span><br />
+          <span class="contentSecondary"><b>Microchip:</b> {{pet.microchip}}</span><br />
+          <span class="contentSecondary"><b>Weight:</b> {{pet.weight}}</span><br />
+          <span class="contentSecondary"><b>Vet Contact:</b> {{pet.vet}}</span><br />
+          <!-- <span class="contentSecondary"><b>Veterinarian Phone:</b> {{pet.vetphone}}</span><br /> -->
+          <span class="contentSecondary"><b>Notes:</b> {{this.notes}}</span><br />
+          <span class="contentSecondary"><data-id="{{this.id}}">Pet ID: {{this.id}}</span><br />
+          <div>
+            <br>
+            <p><button class="btn btn-warning delete_myPet" name="button" data-id="{{this.id}}">Delete</button>
+            &nbsp; &nbsp;<button class="btn btn-success update-myPet" name="button" data-id="{{this.id}}">Update</button></p>
+         </div>
+       </td>
+       <br>
+     </tr>
+   </div><!--end panel body-->
+   </div><!--end panels-->
+
+
+        </p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+      </div>
+    <!-- </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{/each}}
+</div>
     {{else}}
     <div><h3>You have no pets to display at this time.  You may create an pet by selecting the <b>Add A Pet</b> button.</h3></div>
     {{/if}}

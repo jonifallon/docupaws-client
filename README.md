@@ -46,6 +46,9 @@ http://imgur.com/a/6mOHg
 ## Challenges
 
 -   Finding a way to force carraige returns in a textarea field on a form so it renders properly in the browser.
+-   Ensuring that the site is mobile-compatible.  That was a priority for me during design phase.  I believe I have achieved that goal.
+-   My focus over the last stretch of the project has been on design.  I wanted a professional looking site that could be used by both desktop and mobile users.  I found that some things don't necessarily work well on mobile; for instance, I added some text to the landing page using large font that displays and fades out in a looping fashion.  I found that even though it still looked good when I previewed it using a mobile device selection in Chrome, when I tested it using a mobile phone, it looked different (not good - the font did not reduce and was distoring the landing page).  I then implemented a fix where mobile users will not see that fading/looping text.
+-   I wanted to add additional images, but I ran into too many issues with rendering issues (exception being the background image).  I tried uploading inside the images directory, using an external image hosting site.  Neither produced the results I was looking for when using Heroku.
 
 ## Approach
 

@@ -56,8 +56,17 @@ td {
 }
 
 .banner {
-  color: #001d61;
+  color: #fff;
+  font-family: "Great Vibes", cursive;
+  font-size: 60px;
+  // line-height: 160px;
+  font-weight: normal;
+  // margin-bottom: 0px;
+  // margin-top: 20px;
   text-align: center;
+  text-shadow: 0 1px 1px #fff;
+  // width: 100%;
+  // background-color: blue;
 }
 
 
@@ -215,11 +224,12 @@ h3 {
   margin-right: 2%;
 }
 
-#printpage {
-  font-size: 16px;
-  float: right;
-  padding: 1px;
-}
+// .printpage {
+//   font-size: 16px;
+//   color: #fff;
+//   float: right;
+//   padding: 1px;
+// }
 
 // add these to functions so they appear when appropriate
 #signin-error, #signup-error, #changepw-error {
@@ -264,9 +274,9 @@ hr.style15:after {
 }
 
 .well {
-  background-color: #fff;
+  background-color: #376347;
   display: none;
-  margin-top: 20px;
+  margin-top: 10px;
   min-height: 800px;
   // background: red; /* For browsers that do not support gradients */
   // background: -webkit-linear-gradient(#f4f2e1, #fff); /* For Safari 5.1 to 6.0 */

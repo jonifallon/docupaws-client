@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const index = function () {
-  console.log('inside index api')
+  // console.log('inside index api')
   return $.ajax({
     url: config.apiOrigin + '/meds',
     // url: config.apiOrigin + '/meds?over=true',
@@ -16,7 +16,7 @@ const index = function () {
 }
 
 const myIndex = function () {
-  console.log('inside myIndex api')
+  // console.log('inside myIndex api')
   return $.ajax({
     url: config.apiOrigin + '/myMeds',
     // url: config.apiOrigin + '/meds?over=true',
@@ -28,7 +28,7 @@ const myIndex = function () {
 }
 
 const createmed = (data) => {
-  console.log('inside createmed function api.js', data)
+  // console.log('inside createmed function api.js', data)
   return $.ajax({
     url: config.apiOrigin + '/meds',
     method: 'POST',
@@ -40,7 +40,7 @@ const createmed = (data) => {
 }
 
 const deletemed = (id) => {
-  console.log('inside deletemed function api.js', id)
+  // console.log('inside deletemed function api.js', id)
   return $.ajax({
     url: config.apiOrigin + '/meds/' + id,
     method: 'DELETE',
@@ -51,7 +51,7 @@ const deletemed = (id) => {
 }
 
 const updatemed = (id, data) => {
-  console.log('inside update med in api.js data is', id, data)
+  // console.log('inside update med in api.js data is', id, data)
   return $.ajax({
     url: config.apiOrigin + '/meds/' + id,
     method: 'PATCH',
@@ -63,7 +63,7 @@ const updatemed = (id, data) => {
 }
 
 const showmed = (id) => {
-  console.log('inside the showmed function', id)
+  // console.log('inside the showmed function', id)
   return $.ajax({
     url: config.apiOrigin + '/meds/' + id,
     method: 'GET',

@@ -61,7 +61,7 @@ const onMyIndexFailure = function (data) {
 const onGetMedForUpdateSuccess = function (data) {
   // console.table(data)
   // this next console log shows right data, but it's passing wrong data to
-  console.log('inside onGetMedForUpdateSuccess ui.js', data)
+  // console.log('inside onGetMedForUpdateSuccess ui.js', data)
   // $(event.target).data('id')
   $('#update-med').attr('data-id', data.med.id)
   // console.log('data-id', data.med.id)

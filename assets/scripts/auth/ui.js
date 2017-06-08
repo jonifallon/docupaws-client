@@ -61,7 +61,7 @@ const onMyIndexFailure = function (data) {
 const onGetPetForUpdateSuccess = function (data) {
   // console.table(data)
   // this next console log shows right data, but it's passing wrong data to
-  console.log('inside onGetPetForUpdateSuccess ui.js', data)
+  // console.log('inside onGetPetForUpdateSuccess ui.js', data)
   // $(event.target).data('id')
   $('#update-pet').attr('data-id', data.pet.id)
   // console.log('data-id', data.pet.id)
@@ -93,7 +93,7 @@ const onGetPetForUpdateFailure = function (data) {
 }
 
 const signUpSuccess = (data) => {
-  console.log('signUpSuccess ran and data is ', data)
+  // console.log('signUpSuccess ran and data is ', data)
   $('#signup-modal').modal('hide')
   $('#signup-error').hide()
   $('.signout-menu-item').hide()
@@ -149,7 +149,7 @@ const signOutFailure = (error) => {
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('inside changepassword success ui password successfully changed')
+  // console.log('inside changepassword success ui password successfully changed')
   hideItems()
   $('#changepassword-modal').modal('hide')
   $('#changepw-error').hide()

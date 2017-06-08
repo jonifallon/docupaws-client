@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const index = function () {
-  console.log('inside index api')
+  // console.log('inside index api')
   return $.ajax({
     url: config.apiOrigin + '/pets',
     // url: config.apiOrigin + '/pets?over=true',
@@ -16,7 +16,7 @@ const index = function () {
 }
 
 const myIndex = function () {
-  console.log('inside myIndex api')
+  // console.log('inside myIndex api')
   return $.ajax({
     url: config.apiOrigin + '/myPets',
     // url: config.apiOrigin + '/pets?over=true',
@@ -28,7 +28,7 @@ const myIndex = function () {
 }
 
 const signUp = (data) => {
-  console.log('inside signUp api and data is', data)
+  // console.log('inside signUp api and data is', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -37,7 +37,7 @@ const signUp = (data) => {
 }
 
 const signIn = (data) => {
-  console.log('signin function api', data)
+  // console.log('signin function api', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -46,7 +46,7 @@ const signIn = (data) => {
 }
 
 const signOut = () => {
-  console.log('inside signOut api')
+  // console.log('inside signOut api')
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -57,7 +57,7 @@ const signOut = () => {
 }
 
 const changePassword = (data) => {
-  console.log('inside changePassword api')
+  // console.log('inside changePassword api')
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -69,7 +69,7 @@ const changePassword = (data) => {
 }
 
 const createpet = (data) => {
-  console.log('inside createpet function api.js', data)
+  // console.log('inside createpet function api.js', data)
   return $.ajax({
     url: config.apiOrigin + '/pets',
     method: 'POST',
@@ -81,7 +81,7 @@ const createpet = (data) => {
 }
 
 const deletePet = (id) => {
-  console.log('inside deletepet function api.js', id)
+  // console.log('inside deletepet function api.js', id)
   return $.ajax({
     url: config.apiOrigin + '/pets/' + id,
     method: 'DELETE',
@@ -92,7 +92,7 @@ const deletePet = (id) => {
 }
 
 const updatePet = (id, data) => {
-  console.log('inside update pet in api.js data is', id, data)
+  // console.log('inside update pet in api.js data is', id, data)
   return $.ajax({
     url: config.apiOrigin + '/pets/' + id,
     method: 'PATCH',
@@ -104,7 +104,7 @@ const updatePet = (id, data) => {
 }
 
 const showPet = (id) => {
-  console.log('inside the showPet function', id)
+  // console.log('inside the showPet function', id)
   return $.ajax({
     url: config.apiOrigin + '/pets/' + id,
     method: 'GET',

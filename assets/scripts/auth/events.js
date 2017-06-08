@@ -8,7 +8,7 @@ const store = require('../store')
 const preLoadHide = require('../pre-load-hide')
 
 const onSignUp = function (event) {
-  console.log('inside onSignUp event')
+  // console.log('inside onSignUp event')
   event.preventDefault()
   const data = getFormFields(this)
   api.signUp(data)
@@ -18,9 +18,9 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
-  console.log('inside onSignIn event')
+  // console.log('inside onSignIn event')
   event.preventDefault()
-  console.log('signin ran')
+  // console.log('signin ran')
   const data = getFormFields(this)
   api.signIn(data)
   .then(ui.signInSuccess)
@@ -30,7 +30,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('signout ran')
+  // console.log('signout ran')
 
   api.signOut()
   .then(ui.signOutSuccess)
@@ -39,7 +39,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
   const data = getFormFields(this)
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
@@ -49,7 +49,7 @@ const onChangePassword = function (event) {
 }
 
 const onMyIndex = function () {
-  console.log('inside onMyIndex event')
+  // console.log('inside onMyIndex event')
   event.preventDefault()
   api.myIndex()
   .then(ui.onMyIndexSuccess)
@@ -59,7 +59,7 @@ const onMyIndex = function () {
 // adding pets
 
 const populateAddPetForm = function (event) {
-  console.log('inside populateAddPetForm event')
+  // console.log('inside populateAddPetForm event')
   event.preventDefault()
   $('.viewAllPets').hide()
   $('#create-pet').show()
@@ -69,7 +69,7 @@ const populateAddPetForm = function (event) {
 }
 
 const createpet = function (event) {
-  console.log('inside the createpet function on events.js', event)
+  // console.log('inside the createpet function on events.js', event)
   event.preventDefault()
   const data = getFormFields(this)
   api.createpet(data)
@@ -79,7 +79,7 @@ const createpet = function (event) {
 }
 
 const cancelNew = function () {
-  console.log('inside cancelNew event')
+  // console.log('inside cancelNew event')
   event.preventDefault()
   hideNewPet() // what is this
   $('#create-pet')[0].reset()
@@ -90,7 +90,7 @@ const cancelNew = function () {
 }
 
 const hideNewPet = function (event) {
-  console.log('inside hideNewPet function')
+  // console.log('inside hideNewPet function')
   $('#create-pet').hide()
   $('#newpet').off()
   $('#newpet').prop('disabled', true)
@@ -100,7 +100,7 @@ const hideNewPet = function (event) {
 // update pet
 
 const populateUpdatePetForm = function (event) {
-  console.log('inside populateUpdatePetForm event')
+  // console.log('inside populateUpdatePetForm event')
   // populate the create-pet form on the index page
   event.preventDefault()
   // captures the pet ID input by the user
@@ -110,16 +110,16 @@ const populateUpdatePetForm = function (event) {
       .then(ui.onGetPetForUpdateSuccess)
       .catch(ui.onGetPetForUpdateFailure)
   $('#update-pet').show()
-  // console.log('inside populateUpdatePetForm', pet)
+  // // console.log('inside populateUpdatePetForm', pet)
 }
 
 const onUpdatePet = function (event) {
-  console.log('inside onUpdatePet function')
+  // // console.log('inside onUpdatePet function')
   event.preventDefault()
-  console.log('inside the updatePet function in events, and events is', event)
+  // // console.log('inside the updatePet function in events, and events is', event)
   // const id = $(event.target).data('id')
   const id = store.data.pet.id
-  console.log('id from the store is ', id)
+  // // console.log('id from the store is ', id)
   const data = getFormFields(this)
   // if ($('#cancelupdatepet').on('submit', cancelNew)) {
   //   cancelUpdate()
@@ -131,7 +131,7 @@ const onUpdatePet = function (event) {
 }
 
 const cancelUpdate = function () {
-  console.log('inside cancelUpdate function')
+  // // console.log('inside cancelUpdate function')
   event.preventDefault()
   // $('#update-pet').show()
   $('#update-pet')[0].reset()
@@ -143,7 +143,7 @@ const cancelUpdate = function () {
 }
 
 const hideUpdatePet = function (event) {
-  console.log('inside hideUpdatePet function')
+  // // console.log('inside hideUpdatePet function')
   // event.preventDefault()
   // resetTemplate1Fields()
   $('#update-pet').hide()
@@ -154,7 +154,7 @@ const hideUpdatePet = function (event) {
 // delete pet
 
 const deletePet = function (event) {
-  console.log('inside deletePet event')
+  // // console.log('inside deletePet event')
   event.preventDefault()
   const id = $(this).attr('data-id')
   api.deletePet(id)
@@ -165,7 +165,7 @@ const deletePet = function (event) {
     // })
     .then(() => {
       const numOfPets = $('.pet-content').children().length
-      console.log(numOfPets)
+      // // console.log(numOfPets)
       if (numOfPets < 2) {
         $('.pet-content').append('<h1>No Pets</h1>')
       }
@@ -175,14 +175,14 @@ const deletePet = function (event) {
 
 // other stuff
 const hideSigninShowSignup = function () {
-  console.log('inside hideSigninShowSignup event')
+  // // console.log('inside hideSigninShowSignup event')
   $('#signin-modal').modal('hide')
   $('#signup-modal').modal('show')
   $('#signin-error').hide()
 }
 
 const closeModal = function () {
-  console.log('inside closeModal event')
+  // // console.log('inside closeModal event')
   preLoadHide.preLoad()
   $('#changepassword-form').trigger('reset')
   $('#signup-form').trigger('reset')

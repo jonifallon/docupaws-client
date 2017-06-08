@@ -7,7 +7,7 @@ const ui = require('./ui')
 const store = require('../store')
 
 const onMyIndex = function () {
-  console.log('inside onMyIndex event')
+  // console.log('inside onMyIndex event')
   event.preventDefault()
   api.myIndex()
   .then(ui.onMyIndexSuccess)
@@ -17,7 +17,7 @@ const onMyIndex = function () {
 // adding meds
 
 const populateAddMedForm = function (event) {
-  console.log('inside populateAddMedForm event')
+  // console.log('inside populateAddMedForm event')
   event.preventDefault()
   $('.viewAllMeds').hide()
   $('#create-med').show()
@@ -27,7 +27,7 @@ const populateAddMedForm = function (event) {
 }
 
 const createmed = function (event) {
-  console.log('inside the createmed function on events.js', event)
+  // console.log('inside the createmed function on events.js', event)
   event.preventDefault()
   const data = getFormFields(this)
   api.createmed(data)
@@ -37,7 +37,7 @@ const createmed = function (event) {
 }
 
 const cancelNew = function () {
-  console.log('inside cancelNew event')
+  // console.log('inside cancelNew event')
   event.preventDefault()
   hideNewMed() // what is this
   $('#create-med')[0].reset()
@@ -48,7 +48,7 @@ const cancelNew = function () {
 }
 
 const hideNewMed = function (event) {
-  console.log('inside hideNewMed function')
+  // console.log('inside hideNewMed function')
   $('#create-med').hide()
   $('#newmed').off()
   $('#newmed').prop('disabled', true)
@@ -58,7 +58,7 @@ const hideNewMed = function (event) {
 // update med
 
 const populateUpdateMedForm = function (event) {
-  console.log('inside populateUpdateMedForm event')
+  // console.log('inside populateUpdateMedForm event')
   // populate the create-med form on the index page
   event.preventDefault()
   // captures the med ID input by the user
@@ -68,16 +68,16 @@ const populateUpdateMedForm = function (event) {
       .then(ui.onGetMedForUpdateSuccess)
       .catch(ui.onGetMedForUpdateFailure)
   $('#update-med').show()
-  // console.log('inside populateUpdateMedForm', med)
+  // // console.log('inside populateUpdateMedForm', med)
 }
 
 const onUpdateMed = function (event) {
-  console.log('inside onUpdateMed function')
+  // console.log('inside onUpdateMed function')
   event.preventDefault()
-  console.log('inside the updateMed function in events, and events is', event)
+  // console.log('inside the updateMed function in events, and events is', event)
   // const id = $(event.target).data('id')
   const id = store.data.med.id
-  console.log('id from the store is ', id)
+  // console.log('id from the store is ', id)
   const data = getFormFields(this)
   // if ($('#cancelupdatemed').on('submit', cancelNew)) {
   //   cancelUpdate()
@@ -89,7 +89,7 @@ const onUpdateMed = function (event) {
 }
 
 const cancelUpdate = function () {
-  console.log('inside cancelUpdate function')
+  // console.log('inside cancelUpdate function')
   event.preventDefault()
   // $('#update-med').show()
   $('#update-med')[0].reset()
@@ -101,7 +101,7 @@ const cancelUpdate = function () {
 }
 
 const hideUpdateMed = function (event) {
-  console.log('inside hideUpdateMed function')
+  // console.log('inside hideUpdateMed function')
   // event.preventDefault()
   // resetTemplate1Fields()
   $('#update-med').hide()
@@ -112,7 +112,7 @@ const hideUpdateMed = function (event) {
 // delete med
 
 const deleteMed = function (event) {
-  console.log('inside deleteMed event')
+  // console.log('inside deleteMed event')
   event.preventDefault()
   const id = $(this).attr('data-id')
   api.deleteMed(id)
@@ -123,7 +123,7 @@ const deleteMed = function (event) {
     // })
     .then(() => {
       const numOfMeds = $('.med-content').children().length
-      console.log(numOfMeds)
+      // console.log(numOfMeds)
       if (numOfMeds < 2) {
         $('.med-content').append('<h1>No Meds</h1>')
       }

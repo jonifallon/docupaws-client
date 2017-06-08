@@ -177,12 +177,12 @@ h3 {
 }
 
 .contentSecondary {
-  font-size: 20px;
-  color: #001d61;
+  font-size: 16px;
+  // color: #001d61;
 }
 
 .itemName {
-  font-size: 30px;
+  font-size: 20px;
   color: #001d61;
 }
 
@@ -193,6 +193,7 @@ h3 {
 
 .row {
   overflow: hidden;
+
 }
 
 .viewAddPetButtons, .change-password-menu-item, .signout-menu-item {
@@ -201,6 +202,11 @@ h3 {
 
 #create-pet {
   display: none;
+}
+
+.viewAllPets {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 // add these to functions so they appear when appropriate

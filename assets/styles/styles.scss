@@ -11,6 +11,12 @@ body {
   background-color: #b0c4b0;
 }
 
+body.toggle {
+ background-image: none;
+}
+
+// .type2 { background-image:none; }
+
 .bottom {
   vertical-align: baseline;
 }

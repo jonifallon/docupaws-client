@@ -21,6 +21,37 @@ $(() => {
   authEvents.addHandlers()
 })
 
+// hide errors
+$(() => {
+  $(document).on('click', '.signin-menu-item', function () {
+    $('#signin-error').hide()
+  })
+})
+
+$(() => {
+  $(document).on('click', '.signup-menu-item', function () {
+    $('#signup-error').hide()
+  })
+})
+
+$(() => {
+  $(document).on('click', '#getstartedbutton', function () {
+    $('#signin-error').hide()
+  })
+})
+
+$(() => {
+  $(document).on('click', '#signupWithinSigninModal-button', function () {
+    $('#signup-error').hide()
+  })
+})
+
+$(() => {
+  $(document).on('click', '.change-password-menu-item', function () {
+    $('#changepw-error').hide()
+  })
+})
+
 // signin
 $(() => {
   setAPIOrigin(location, config)

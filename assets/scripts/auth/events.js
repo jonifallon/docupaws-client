@@ -9,6 +9,7 @@ const preLoadHide = require('../pre-load-hide')
 
 const onSignUp = function (event) {
   // console.log('inside onSignUp event')
+  $('#signup-error').hide()
   event.preventDefault()
   const data = getFormFields(this)
   api.signUp(data)
@@ -18,6 +19,7 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
+  $('#signin-error').hide()
   // console.log('inside onSignIn event')
   event.preventDefault()
   // console.log('signin ran')
@@ -38,6 +40,7 @@ const onSignOut = function (event) {
 }
 
 const onChangePassword = function (event) {
+  $('#changepw-error').hide()
   event.preventDefault()
   // console.log('change password ran!')
   const data = getFormFields(this)

@@ -5,6 +5,7 @@ const showPetsHandlerbars = require('../templates/pet-listing.handlebars')
 const showMyPetsHandlerbars = require('../templates/pet-listing_individual.handlebars')
 const api = require('./api')
 
+
 const hideItems = function () {
   $('#update-pet').hide()
   $('#create-pet').hide()
@@ -121,6 +122,8 @@ const signInSuccess = (data) => {
   $('#signin-modal').modal('hide')
   $('#signin-error').hide()
   $('.cb-slideshow').hide()
+  $('body').toggleClass('toggle')
+
   hideItems()
   api.myIndex()
   .then(onMyIndexSuccess)
@@ -143,6 +146,7 @@ const signOutSuccess = (data) => {
   $('.signout-menu-item').hide()
   hideItems()
   $('.cb-slideshow').show()
+  $('body').toggleClass('toggle')
 }
 
 const signOutFailure = (error) => {

@@ -8,10 +8,10 @@ Docu-Paws is a single-page application that allows users to add and track pet he
 
 ## Application Links
 
--   Front End Repo: https://github.com/jonifallon/docupaws-client
--   Back End Repo: https://github.com/jonifallon/docupaws-api
--   Deployed Front End Client:
--   Heroku Site:  
+- Front End Repo: https://github.com/jonifallon/docupaws-client
+- Back End Repo: https://github.com/jonifallon/docupaws-api
+- Deployed Front End Client: https://jonifallon.github.io/docupaws-client/
+- Heroku Site: https://safe-mesa-23831.herokuapp.com/
 
 ## ERD
 
@@ -19,11 +19,7 @@ Link to ERD: http://imgur.com/a/xAnQs
 
 ## API
 
-I used Rails to create the backend.  I added a Pets resource and may add an additional
-resource of meds (stretch goal):
-
-- pets
-- meds (prescriptions)
+I used Rails to create the backend.  I have users plus one resource "Pets".
 
 ## Screenshot
 

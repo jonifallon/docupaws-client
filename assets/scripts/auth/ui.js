@@ -142,6 +142,7 @@ const signOutSuccess = (data) => {
   $('.change-password-menu-item').hide()
   $('.signout-menu-item').hide()
   hideItems()
+  $('.cb-slideshow').show()
 }
 
 const signOutFailure = (error) => {
